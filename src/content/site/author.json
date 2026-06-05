@@ -1,0 +1,24 @@
+{
+  "pen_name": "Steven Saint",
+  "legal_name": "Steven P. Santovasi",
+  "location": "Connecticut, USA",
+  "website": "https://stevensaintbooks.com",
+  "bio_short": "Steven Saint writes literary thrillers about long questions and patient answers. He lives in Connecticut.",
+  "bio_long": "Steven Saint is the pen name of Steven P. Santovasi. He writes across literary thriller and historical fiction, with an attention to the long arc — the kind of story whose answer was the question all along. The Spiral Continuum is his first published series; he also writes the Caribbean thriller series Island of Bones. He lives in Connecticut.",
+  "series": [
+    {
+      "title": "The Spiral Continuum",
+      "volumes": 8,
+      "status": "complete",
+      "first_published": "2026-05-18",
+      "url": "https://stevensaintbooks.com/spiral-continuum"
+    },
+    {
+      "title": "Island of Bones",
+      "volumes": 9,
+      "status": "in progress",
+      "first_published": null,
+      "url": "https://stevensaintbooks.com/island-of-bones"
+    }
+  ]
+}

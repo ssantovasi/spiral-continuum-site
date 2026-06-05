@@ -1,0 +1,25 @@
+{
+  "title": "The Spiral Continuum",
+  "author": "Steven Saint",
+  "author_legal_name": "Steven P. Santovasi",
+  "volumes": 8,
+  "total_words": 1014687,
+  "total_chapters": 322,
+  "first_published": "2026-05-18",
+  "press_ready_baseline": {
+    "date": "2026-05-03",
+    "commit": "80a9e9e"
+  },
+  "elevator_pitch": "A 1606 atlas arrives at a Lisbon scholar's apartment with a tidemark that turns out to be a fingerprint. Across four hundred years and eight volumes, a thirteen-stone lattice, a Jesuit cartographer, and a generational line of women carrying a single question reach the moment the question is finally answered.",
+  "shared_tagline_pattern": "Some things, when ___, ___.",
+  "registers": [
+    {"books": [1, 2, 3, 7, 8], "name": "Trilogy register", "description": "Close third person, past tense, multi-POV. Long observational sentences punctuated by hard short ones. Holmes-style detail-first inference."},
+    {"books": [4], "name": "Almeida memoir register", "description": "Late-Almeida memoir frame + Jesuit period syntax + Holmes beats, rendered into modern English via translator's-note conceit. 1652 frame."},
+    {"books": [5], "name": "Aurora memoir register", "description": "Aurora Coutinho's first-person memoir dictated 1965–1967 from Cabeceiras de Basto. Plain-spoken Portuguese-tempo English, direct address to her granddaughter Mariana."},
+    {"books": [6], "name": "Period-historical register", "description": "Three-POV-across-90-years close-third (1755–1849). Joaninha child-sensory; Inácio Coimbra-Jesuit period syntax; Maria Inês long-keeper; Conceição rural-craftswoman."}
+  ],
+  "reading_order_note": "Books are published 1–8 in reading order. Roman-numeral series-position convention: Book 7 is Volume VIII (closing volume); Book 8 is Volume VII (interquel between trilogy and Book 7).",
+  "supplement_url": "https://github.com/ssantovasi/spiral-continuum-supplement/releases/latest/download/maps_and_timeline_supplement.pdf",
+  "supplement_repo": "https://github.com/ssantovasi/spiral-continuum-supplement",
+  "author_site": "https://stevensaintbooks.com"
+}

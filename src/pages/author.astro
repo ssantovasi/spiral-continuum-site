@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import author from '../content/site/author.json';
+---
+
+<Layout title="Author" description={author.bio_short}>
+  <h1>Steven Saint</h1>
+  <p class="tagline">{author.bio_short}</p>
+
+  <hr class="ornament" />
+
+  <div class="prose">
+    <p>{author.bio_long}</p>
+  </div>
+
+  <h2>Series</h2>
+  <ul>
+    {author.series.map((s) => (
+      <li>
+        <strong>{s.title}</strong>
+        <span class="muted">
+          {' '}&mdash; {s.volumes} volume{s.volumes === 1 ? '' : 's'}, {s.status}
+        </span>
+      </li>
+    ))}
+  </ul>
+
+  <p class="muted">
+    Steven Saint is the pen name of {author.legal_name}. He lives in
+    {' '}{author.location}.
+  </p>
+</Layout>

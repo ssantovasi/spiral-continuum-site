@@ -1,0 +1,18 @@
+{
+  "name": "spiral-continuum-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "sync": "node scripts/sync-content.mjs",
+    "dev": "node scripts/sync-content.mjs && astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^6.4.4"
+  }
+}

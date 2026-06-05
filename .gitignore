@@ -1,0 +1,28 @@
+# Astro
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Synced content is committed (Cloudflare deploys need it). To
+# regenerate, run `npm run sync` against a sibling CartographerCipher
+# clone.

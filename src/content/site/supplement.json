@@ -1,0 +1,26 @@
+{
+  "title": "Maps and Timeline Supplement — The Spiral Continuum",
+  "description": "A free supplement to The Spiral Continuum: nine parchment-stylized maps (one per volume plus a master overall map) and a complete chronological series timeline. Hosted as a public GitHub release; readers can download the latest PDF directly.",
+  "format": "PDF",
+  "current_version": "v1.0.0",
+  "current_release_date": "2026-05-17",
+  "download_url": "https://github.com/ssantovasi/spiral-continuum-supplement/releases/latest/download/maps_and_timeline_supplement.pdf",
+  "repo_url": "https://github.com/ssantovasi/spiral-continuum-supplement",
+  "why_separate": "KDP forbids mixed B&W and color in a single paperback interior. The interior books are B&W; the maps and timeline are color. Hosting them as a free supplement preserves the color rendering and keeps the printed book at a reasonable price.",
+  "contents": [
+    {"page_group": "Maps", "items": [
+      "Book 1 — Lisbon · Atlantic · upper Rio Negro",
+      "Book 2 — The four-continent expedition (seven knots)",
+      "Book 3 — Cabeceiras de Basto · Andean approach",
+      "Book 4 — Almeida's 87-year life across four panels",
+      "Book 5 — Cabeceiras de Basto · the 1948 voyage",
+      "Book 6 — Cabeceiras de Basto · Iberia 1755–1849",
+      "Book 7 — Lisbon · Geneva · Madrid · Reykjanes",
+      "Book 8 — Estrela · Geneva · the 2018–2027 relays",
+      "Overall — every site, every path, every life journey"
+    ]},
+    {"page_group": "Timeline", "items": [
+      "Master chronological timeline spanning ~1700 BCE through 2029 CE"
+    ]}
+  ]
+}

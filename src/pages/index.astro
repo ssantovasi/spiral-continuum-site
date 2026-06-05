@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import series from '../content/site/series.json';
+
+const books = (await getCollection('books')).sort(
+  (a, b) => a.data.reading_order - b.data.reading_order
+);
+---
+
+<Layout title={series.title} description={series.elevator_pitch}>
+  <h1>{series.title}</h1>
+  <p class="tagline">{series.elevator_pitch}</p>
+
+  <hr class="ornament" />
+
+  <h2>The Eight Volumes</h2>
+  <p class="muted">
+    Published in reading order 1&ndash;8. The Roman-numeral series-position
+    differs for the final two volumes: Book 7 is <em>Volume VIII</em> (the
+    closing volume); Book 8 is <em>Volume VII</em> (the interquel).
+  </p>
+
+  <div class="book-grid">
+    {books.map((book) => (
+      <a class="book-card" href={`/books/${book.data.id}`}>
+        <img src={`/img/book${book.data.id}_v8_cover.png`} alt={book.data.title} loading="lazy" />
+        <div class="vol">Book {book.data.id} &middot; Vol. {book.data.volume_roman}</div>
+        <div class="title">{book.data.title}</div>
+        <div class="tag">{book.data.tagline}</div>
+      </a>
+    ))}
+  </div>
+
+  <hr class="ornament" />
+
+  <h2>Free supplement</h2>
+  <p>
+    Nine parchment-stylized maps and a master chronological timeline,
+    free to download.
+  </p>
+  <p>
+    <a class="buy-link" href={series.supplement_url}>Download the PDF</a>
+  </p>
+</Layout>
