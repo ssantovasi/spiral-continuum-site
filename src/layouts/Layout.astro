@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const fullTitle = title === 'The Spiral Continuum' ? title : `${title} — The Spiral Continuum`;
+const fullTitle = title === 'Steven Saint' ? title : `${title} — Steven Saint`;
 ---
 
 <html lang="en">
@@ -18,14 +18,18 @@ const fullTitle = title === 'The Spiral Continuum' ? title : `${title} — The S
     <title>{fullTitle}</title>
     {description && <meta name="description" content={description} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;500;600&display=swap" />
   </head>
   <body>
     <header class="site">
       <div class="inner">
-        <a href="/" class="brand">The Spiral Continuum</a>
+        <a href="/" class="brand">Steven Saint</a>
         <nav>
-          <a href="/">Books</a>
-          <a href="/supplement">Maps &amp; Timeline</a>
+          <a href="/spiral-continuum">Spiral Continuum</a>
+          <a href="/island-of-bones">Island of Bones</a>
+          <a href="/maps">Maps</a>
           <a href="/author">Author</a>
         </nav>
       </div>
@@ -35,7 +39,7 @@ const fullTitle = title === 'The Spiral Continuum' ? title : `${title} — The S
     </main>
     <footer class="site">
       <div class="inner">
-        <span>The Spiral Continuum &copy; Steven Saint</span>
+        <span>&copy; Steven Saint</span>
         <span><a href="https://stevensaintbooks.com">stevensaintbooks.com</a></span>
       </div>
     </footer>

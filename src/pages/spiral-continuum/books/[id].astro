@@ -1,0 +1,70 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((book) => ({
+    params: { id: String(book.data.id) },
+    props: { book },
+  }));
+}
+
+const { book } = Astro.props;
+const { data } = book;
+const { Content } = await render(book);
+
+const buyLinks = [
+  { key: 'kindle',    label: 'Kindle',    url: data.asin ? `https://www.amazon.com/dp/${data.asin}` : null },
+  { key: 'paperback', label: 'Paperback', url: null },
+  { key: 'hardcover', label: 'Hardcover', url: null },
+];
+---
+
+<Layout title={data.title} description={data.tagline}>
+  <article>
+    <div class="book-hero">
+      <div class="cover">
+        <img src={`/img/book${data.id}_v8_cover.png`} alt={`Cover of ${data.title}`} />
+      </div>
+      <div>
+        <div class="vol">The Spiral Continuum &middot; Book {data.id} &middot; Volume {data.volume_roman}</div>
+        <h1>{data.title}</h1>
+        {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
+        <p class="tagline">{data.tagline}</p>
+
+        <div class="buy-links">
+          {buyLinks.map((bl) => bl.url
+            ? <a class="buy-link" href={bl.url}>{bl.label}</a>
+            : <span class="buy-link pending">{bl.label} (coming soon)</span>
+          )}
+        </div>
+
+        <dl class="book-meta">
+          <dt>Voice register</dt><dd>{data.voice_register}</dd>
+          <dt>Pages</dt><dd>{data.pages}</dd>
+          <dt>Words</dt><dd>{data.words.toLocaleString()}</dd>
+          {data.isbn_paperback && (<><dt>ISBN (paperback)</dt><dd>{data.isbn_paperback}</dd></>)}
+          {data.isbn_hardcover && (<><dt>ISBN (hardcover)</dt><dd>{data.isbn_hardcover}</dd></>)}
+        </dl>
+      </div>
+    </div>
+
+    <hr class="ornament" />
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    <div class="scene-plate">
+      <img src={`/img/scene_book${data.id}.png`} alt={`Signature scene plate for ${data.title}`} loading="lazy" />
+      <div class="caption">A signature location from <em>{data.title}</em>.</div>
+    </div>
+
+    <hr class="ornament" />
+
+    <p class="muted">
+      <a href="/spiral-continuum">&larr; All eight volumes</a>
+    </p>
+  </article>
+</Layout>

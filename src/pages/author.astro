@@ -3,30 +3,53 @@ import Layout from '../layouts/Layout.astro';
 import author from '../content/site/author.json';
 ---
 
-<Layout title="Author" description={author.bio_short}>
-  <h1>Steven Saint</h1>
-  <p class="tagline">{author.bio_short}</p>
+<Layout title="Steven Saint — Author" description={author.bio_short}>
+  <div class="author-hero">
+    <div>
+      <h1>Steven Saint</h1>
+      <p class="tagline">{author.tagline}</p>
+      <p>{author.bio_intro}</p>
+    </div>
+    <div>
+      <dl class="book-meta">
+        <dt>Pen name</dt><dd>{author.pen_name}</dd>
+        <dt>Legal name</dt><dd>{author.legal_name}</dd>
+        <dt>Lives</dt><dd>{author.location}</dd>
+        <dt>Series</dt><dd>{author.series.length}</dd>
+      </dl>
+    </div>
+  </div>
 
   <hr class="ornament" />
 
-  <div class="prose">
-    <p>{author.bio_long}</p>
-  </div>
+  {author.bio_sections.map((sec) => (
+    <section class="author-section">
+      <h2>{sec.heading}</h2>
+      <div class="prose">
+        <p>{sec.body}</p>
+      </div>
+    </section>
+  ))}
+
+  <hr class="ornament" />
 
   <h2>Series</h2>
-  <ul>
+  <ul class="author-series-list">
     {author.series.map((s) => (
       <li>
-        <strong>{s.title}</strong>
-        <span class="muted">
-          {' '}&mdash; {s.volumes} volume{s.volumes === 1 ? '' : 's'}, {s.status}
-        </span>
+        <div class="title"><a href={s.url}>{s.title}</a></div>
+        <div class="meta">{s.volumes} volumes &middot; {s.status_detail}</div>
+        <div class="tag">{s.tagline}</div>
       </li>
     ))}
   </ul>
 
+  <hr class="ornament" />
+
   <p class="muted">
     Steven Saint is the pen name of {author.legal_name}. He lives in
     {' '}{author.location}.
+    Reach the author through the publication channels listed on each
+    book's detail page.
   </p>
 </Layout>

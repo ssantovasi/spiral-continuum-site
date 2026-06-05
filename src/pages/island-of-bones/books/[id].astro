@@ -1,0 +1,66 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const books = await getCollection('iobBooks');
+  return books.map((book) => ({
+    params: { id: String(book.data.id) },
+    props: { book },
+  }));
+}
+
+const { book } = Astro.props;
+const { data } = book;
+const { Content } = await render(book);
+
+const isWorking = data.title_status === 'working';
+const hasFront  = data.art.front !== null;
+---
+
+<Layout title={data.title} description={data.tagline}>
+  <article>
+    <div class="book-hero">
+      <div class="cover">
+        {hasFront ? (
+          <img src={`/img/${data.art.front}`} alt={`Cover of ${data.title}`} />
+        ) : (
+          <div class="placeholder">Cover in progress</div>
+        )}
+      </div>
+      <div>
+        <div class="vol">Island of Bones &middot; {data.volume_label}</div>
+        <h1>
+          {data.title}
+          {isWorking && <span style="font-size: 0.5em; color: var(--color-text-dim); font-style: italic; margin-left: 0.5em;">(working title)</span>}
+        </h1>
+        {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
+        <p class="tagline">{data.tagline}</p>
+
+        <div class="buy-links">
+          <span class="buy-link pending">Kindle (coming soon)</span>
+          <span class="buy-link pending">Paperback (coming soon)</span>
+          <span class="buy-link pending">Hardcover (coming soon)</span>
+        </div>
+
+        <dl class="book-meta">
+          <dt>Status</dt><dd style="text-transform: capitalize;">{data.status}</dd>
+          {data.voice_register && (<><dt>Voice register</dt><dd>{data.voice_register}</dd></>)}
+          {data.setting && (<><dt>Setting</dt><dd>{data.setting}</dd></>)}
+        </dl>
+      </div>
+    </div>
+
+    <hr class="ornament" />
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    <hr class="ornament" />
+
+    <p class="muted">
+      <a href="/island-of-bones">&larr; All nine volumes</a>
+    </p>
+  </article>
+</Layout>

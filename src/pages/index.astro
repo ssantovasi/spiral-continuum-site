@@ -1,45 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import series from '../content/site/series.json';
-
-const books = (await getCollection('books')).sort(
-  (a, b) => a.data.reading_order - b.data.reading_order
-);
+import author from '../content/site/author.json';
 ---
 
-<Layout title={series.title} description={series.elevator_pitch}>
-  <h1>{series.title}</h1>
-  <p class="tagline">{series.elevator_pitch}</p>
+<Layout title="Steven Saint" description={author.bio_short}>
+  <section class="hero">
+    <p class="author-sub">{author.tagline}</p>
+    <h1>Steven Saint</h1>
+    <p class="author-tag">{author.bio_short}</p>
+  </section>
 
   <hr class="ornament" />
 
-  <h2>The Eight Volumes</h2>
-  <p class="muted">
-    Published in reading order 1&ndash;8. The Roman-numeral series-position
-    differs for the final two volumes: Book 7 is <em>Volume VIII</em> (the
-    closing volume); Book 8 is <em>Volume VII</em> (the interquel).
-  </p>
-
-  <div class="book-grid">
-    {books.map((book) => (
-      <a class="book-card" href={`/books/${book.data.id}`}>
-        <img src={`/img/book${book.data.id}_v8_cover.png`} alt={book.data.title} loading="lazy" />
-        <div class="vol">Book {book.data.id} &middot; Vol. {book.data.volume_roman}</div>
-        <div class="title">{book.data.title}</div>
-        <div class="tag">{book.data.tagline}</div>
-      </a>
-    ))}
-  </div>
+  {author.series.map((s) => (
+    <a class="series-card" href={s.url}>
+      <div class="label">{s.id === 'spiral-continuum' ? 'Series I' : 'Series II'}</div>
+      <h2>{s.title}</h2>
+      <div class="status">{s.volumes} volumes · {s.status_detail}</div>
+      <div class="tag">{s.tagline}</div>
+      <div class="cta">Read the series &rarr;</div>
+    </a>
+  ))}
 
   <hr class="ornament" />
 
-  <h2>Free supplement</h2>
-  <p>
-    Nine parchment-stylized maps and a master chronological timeline,
-    free to download.
-  </p>
-  <p>
-    <a class="buy-link" href={series.supplement_url}>Download the PDF</a>
+  <p class="muted" style="text-align: center;">
+    <a href="/author">More about Steven Saint</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/maps">Series maps</a>
   </p>
 </Layout>

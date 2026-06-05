@@ -3,22 +3,47 @@
   "legal_name": "Steven P. Santovasi",
   "location": "Connecticut, USA",
   "website": "https://stevensaintbooks.com",
-  "bio_short": "Steven Saint writes literary thrillers about long questions and patient answers. He lives in Connecticut.",
-  "bio_long": "Steven Saint is the pen name of Steven P. Santovasi. He writes across literary thriller and historical fiction, with an attention to the long arc — the kind of story whose answer was the question all along. The Spiral Continuum is his first published series; he also writes the Caribbean thriller series Island of Bones. He lives in Connecticut.",
+  "tagline": "Long questions. Patient answers.",
+  "bio_short": "Steven Saint writes literary thrillers and historical fiction across two series — The Spiral Continuum and Island of Bones — each built on a single long-arc question and the patient accumulation of evidence that answers it.",
+  "bio_intro": "Steven Saint is the pen name of Steven P. Santovasi. Writing from Connecticut, he builds multi-volume series whose pleasure is less in the surprise than in the convergence — stories whose first scene only resolves in the last book, whose unseen architecture rewards the rereader as much as the first-time reader.",
+  "bio_sections": [
+    {
+      "heading": "On the long arc",
+      "body": "Both series share a structural premise: a single question, planted in the opening chapter of Book One, that takes the full sequence to answer in the language it was asked. In The Spiral Continuum, the question lives in a 1606 atlas; in Island of Bones, it lives in a stone window cut on a Virgin Islands ridge. In each case, the line that carries the question forward is older, broader, and stranger than the modern protagonists can yet see — and the work of each volume is one more piece of evidence the reader earns rather than inherits."
+    },
+    {
+      "heading": "On voice",
+      "body": "The Spiral Continuum holds six distinct voice registers across its eight volumes: a trilogy-register close-third for the modern frame; a late-Almeida memoir for the 1652 prequel; an Aurora-Coutinho dictated memoir for the 1965–1967 voice; a period-historical multi-POV for the 1755–1849 long quiet; a series-closer trilogy register for the modern endgame; and a clinical close-third for the interquel. Island of Bones is single-register by design — Dan Brown machinery, Patterson velocity, Holmesian deduction, with a King-edge dread closer to Lisey's Story than to It — and that single register is the consequence of the series being one question across nine volumes."
+    },
+    {
+      "heading": "On the craft of the series",
+      "body": "Each volume is drafted against a beat sheet, polished against a voice lock, and verified against a per-series canon hierarchy: manuscript first, plan-document second, series-bible third. Maps, timelines, and cast registries exist as load-bearing infrastructure, not as bonus material; a misnamed waystation in volume six is a planting opportunity for volume seven. The supplements are free because the work of carrying them was never the reader's."
+    },
+    {
+      "heading": "Two series, two registers",
+      "body": "The Spiral Continuum is patient and Iberian — Lisbon, Coimbra, Cabeceiras de Basto, the upper Rio Negro, the Salar de Antofalla, Reykjanes. Island of Bones is fast and Caribbean — the Virgin Islands, Cayo Hueso, the Mississippi corridor, the deep-past Atlantic crossings. Both are about discoveries the world made and then chose to hide; both are about the small unbroken lines that kept the evidence."
+    }
+  ],
   "series": [
     {
+      "id": "spiral-continuum",
       "title": "The Spiral Continuum",
       "volumes": 8,
       "status": "complete",
+      "status_detail": "All eight volumes published 2026.",
       "first_published": "2026-05-18",
-      "url": "https://stevensaintbooks.com/spiral-continuum"
+      "tagline": "Some things, when asked, wait.",
+      "url": "/spiral-continuum"
     },
     {
+      "id": "island-of-bones",
       "title": "Island of Bones",
       "volumes": 9,
       "status": "in progress",
+      "status_detail": "Books 1–6 drafted; Book 7 in progress.",
       "first_published": null,
-      "url": "https://stevensaintbooks.com/island-of-bones"
+      "tagline": "Now they'll never know we were here first.",
+      "url": "/island-of-bones"
     }
   ]
 }

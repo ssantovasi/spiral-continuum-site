@@ -1,0 +1,24 @@
+{
+  "id": "island-of-bones",
+  "title": "Island of Bones",
+  "author": "Steven Saint",
+  "author_legal_name": "Steven P. Santovasi",
+  "volumes": 9,
+  "status": "in progress",
+  "status_detail": "Books 1–6 drafted; Book 7 in progress; Books 8–9 in beat-sheet form.",
+  "first_published": null,
+  "elevator_pitch": "Five centuries ago the official story of the New World was carefully written over an earlier arrival. A scattered visual cipher — the Codec — was hidden across the Caribbean to prove it, aimed at a vault on Cayo Hueso, the island of bones. The modern team that reassembles the Codec is not the first to try. The line that hid it has been waiting a thousand years for them to read it.",
+  "tagline": "Now they'll never know we were here first.",
+  "voice": "Dan Brown machinery, Patterson velocity, Holmesian deduction; King-edge dread closer to Lisey's Story than to It.",
+  "register": "Close-third multi-POV — Iris Lettsome (lead), Kwame Cudjoe (partner), Rafael Ribero (antagonist); period-thread interludes across six eras.",
+  "structure": "Three core volumes — The Island of Bones · The River Turn · The Vault — followed by a prequel (Book 4), a southern-branch sequel (Book 5), an origin trilogy (Books 6–8), and a futuristic capstone (Book 9).",
+  "settings_hero": [
+    "Virgin Islands — St. John, St. Thomas, Norman Island (BVI), Salt River (St. Croix)",
+    "Cayo Hueso — Key West, Florida",
+    "Mississippi corridor — Vicksburg and the lower Gulf",
+    "Brazil — Natal, the southern terminus",
+    "Mesoamerica, the Bahamas, and the deep-past Vinland window"
+  ],
+  "site_url": "/island-of-bones",
+  "author_site": "https://stevensaintbooks.com"
+}

@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import supplement from '../content/site/supplement.json';
+
+const books = (await getCollection('books')).sort(
+  (a, b) => a.data.reading_order - b.data.reading_order
+);
+
+const mapCaptions: Record<number, string> = {
+  1: 'Lisbon · the Atlantic · the upper Rio Negro. September–November 2026.',
+  2: 'The four-continent expedition — seven knot-sites, four clinics. April–May 2026.',
+  3: 'Cabeceiras de Basto · the Andean approach. October–December 2026.',
+  4: "Almeida's life across four panels — Bahia · Rio Negro · Lisbon &amp; Rome · Coimbra &amp; Setúbal. 1566–1653.",
+  5: 'Cabeceiras de Basto · the 1948 voyage to Buriti. 1892–1967.',
+  6: 'Cabeceiras de Basto · Coimbra · Lisbon · Setúbal. Ninety years of silence, 1755–1849.',
+  7: 'Lisbon · Geneva · Madrid · Reykjavik. The modern operational close, 2028–2029.',
+  8: 'Estrela · Geneva · Iberia. The 2018–2027 relays.',
+};
+---
+
+<Layout title="Maps &amp; Timeline" description={supplement.description}>
+  <h1>Maps &amp; Timeline</h1>
+  <p class="tagline">
+    Nine parchment-stylized maps and a master timeline for
+    <em>The Spiral Continuum</em>. Color in-book versions are kept out of
+    the paperback for printing reasons; the full supplement is free to
+    download as a PDF, and the per-book maps are rendered in-page below.
+  </p>
+
+  <p>
+    <a class="buy-link" href={supplement.download_url}>Download supplement PDF ({supplement.current_version})</a>
+  </p>
+
+  <hr class="ornament" />
+
+  <h2>The overall map</h2>
+  <p class="muted">
+    Every site, every path, every life-journey across the eight volumes —
+    rendered at wall-poster scale.
+  </p>
+  <div class="maps-feature">
+    <img src="/img/series_map_overall.png" alt="Overall series map" loading="lazy" />
+    <div class="caption">The overall map — 1700 BCE through 2029 CE.</div>
+  </div>
+
+  <hr class="ornament" />
+
+  <h2>The series timeline</h2>
+  <p class="muted">
+    Master chronological timeline.
+  </p>
+  <div class="maps-feature">
+    <img src="/img/series_timeline.png" alt="Series timeline" loading="lazy" />
+    <div class="caption">Master chronology — from the 1700 BCE asker's hill to the 2029 closing day.</div>
+  </div>
+
+  <hr class="ornament" />
+
+  <h2>Per-book maps</h2>
+  <p class="muted">
+    One map per volume, in reading order.
+  </p>
+
+  <div class="maps-grid">
+    {books.map((book) => (
+      <a class="map-card" href={`/spiral-continuum/books/${book.data.id}`}>
+        <img src={`/img/series_map_book${book.data.id}.png`} alt={`Map for ${book.data.title}`} loading="lazy" />
+        <h3>Book {book.data.id} &mdash; {book.data.title}</h3>
+        <p class="caption" set:html={mapCaptions[book.data.id]} />
+      </a>
+    ))}
+  </div>
+
+  <hr class="ornament" />
+
+  <p class="muted">
+    {supplement.why_separate}
+  </p>
+</Layout>

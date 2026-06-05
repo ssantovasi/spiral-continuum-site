@@ -27,4 +27,26 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { books };
+const iobBooks = defineCollection({
+  loader: glob({ pattern: 'book*.md', base: './src/content/iob-books' }),
+  schema: z.object({
+    id: z.number().int(),
+    reading_order: z.number().int(),
+    volume_label: z.string(),
+    title: z.string(),
+    title_status: z.enum(['locked', 'working']).optional(),
+    subtitle: z.string().nullable().optional(),
+    tagline: z.string(),
+    status: z.enum(['drafted', 'in progress', 'beat sheet']),
+    voice_register: z.string().optional(),
+    setting: z.string().optional(),
+    art: z.object({
+      front: z.string().nullable(),
+      back: z.string().nullable(),
+      spine: z.string().nullable(),
+      flap: z.string().nullable(),
+    }),
+  }),
+});
+
+export const collections = { books, iobBooks };
