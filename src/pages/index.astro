@@ -1,32 +1,212 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import author from '../content/site/author.json';
+import series from '../content/site/series.json';
+import iobSeries from '../content/iob-site/series.json';
+
+const SIGILS = ['⟁', '⫢', '☰', '⌒', '⊕', '∞', '⫯', '⊜', '∿', '✷', '⊓'];
+
+const heroSlides = [
+  '/img/series_map_overall_photo.png',
+  '/img/scene_book1.png',
+  '/img/scene_book4.png',
+  '/img/scene_book5.png',
+  '/img/scene_book6.png',
+];
+
+const spiralCovers = [
+  '/img/book1_v8_cover.png',
+  '/img/book2_v8_cover.png',
+  '/img/book3_v8_cover.png',
+  '/img/book4_v8_cover.png',
+];
+
+const iobCovers = [
+  '/img/iob/book1_front.png',
+  '/img/iob/book2_front.png',
+  '/img/iob/book3_front.png',
+  '/img/iob/book4_front.png',
+];
+
+const timelineTeaser = [
+  { date: '~1700 BCE', title: 'The first question at Almada' },
+  { date: '1567', title: 'Pirá-tatá sings at the upper Rio Negro' },
+  { date: '1652', title: 'Raimundo brings Almeida the atlas' },
+  { date: '1849', title: 'Conceição cuts the path-marker' },
+  { date: '1948', title: 'Aurora delivers the plank to Buriti' },
+  { date: '2026', title: 'The Sentence Arrives' },
+  { date: '~1000 AD', title: 'The pale man drifts south to the Antilles' },
+  { date: '1493', title: 'Hayuya releases the arrow at Salt River' },
+  { date: '1503', title: 'The Casa de Contratación founded' },
+  { date: '1692', title: 'Port Royal sinks — the drowned clue' },
+];
 ---
 
 <Layout title="Steven Saint" description={author.bio_short}>
-  <section class="hero">
-    <p class="author-sub">{author.tagline}</p>
-    <h1>Steven Saint</h1>
-    <p class="author-tag">{author.bio_short}</p>
+  <!-- Hero: full-viewport animated landing -->
+  <section class="hero-cinematic" aria-label="Steven Saint hero">
+    <div class="hero-bg" aria-hidden="true">
+      {heroSlides.map((src, i) => (
+        <div class="hero-slide" style={`--i: ${i}; --total: ${heroSlides.length};`}>
+          <img src={src} alt="" loading={i === 0 ? 'eager' : 'lazy'} />
+        </div>
+      ))}
+    </div>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="hero-dust" aria-hidden="true">
+      {Array.from({ length: 24 }).map((_, i) => (
+        <span class="dust-mote" style={`--i: ${i}; --r: ${(i * 31) % 100}%; --d: ${10 + (i * 7) % 18}s; --o: ${0.15 + ((i * 17) % 40) / 100};`}></span>
+      ))}
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">
+        <span>Long Questions</span>
+        <span class="bullet">·</span>
+        <span>Patient Answers</span>
+      </p>
+      <h1 class="hero-title">
+        <span class="word">Steven</span>
+        <span class="word">Saint</span>
+      </h1>
+
+      <div class="hero-sigils" aria-hidden="true">
+        {SIGILS.map((g, i) => (
+          <span class="sigil" style={`--i: ${i};`}>{g}</span>
+        ))}
+      </div>
+
+      <p class="hero-tagline">{author.bio_short}</p>
+
+      <div class="hero-ctas">
+        <a class="hero-cta spiral" href="/spiral-continuum">
+          <span class="cta-label">The Spiral Continuum</span>
+          <span class="cta-meta">{series.volumes} volumes · complete</span>
+        </a>
+        <a class="hero-cta iob" href="/island-of-bones">
+          <span class="cta-label">Island of Bones</span>
+          <span class="cta-meta">{iobSeries.volumes} volumes · in progress</span>
+        </a>
+      </div>
+
+      <a class="hero-scroll" href="#series-spotlight" aria-label="Scroll to discover">
+        <span class="scroll-label">Scroll</span>
+        <span class="scroll-arrow">↓</span>
+      </a>
+    </div>
+
+    <svg class="hero-compass" viewBox="0 0 200 200" aria-hidden="true">
+      <g class="compass-spin" transform-origin="100 100">
+        <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="0.5" />
+        <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="0.3" />
+        <g class="compass-rays">
+          {Array.from({ length: 16 }).map((_, i) => {
+            const a = (i * 22.5) * Math.PI / 180;
+            const x1 = 100 + Math.sin(a) * 78;
+            const y1 = 100 - Math.cos(a) * 78;
+            const x2 = 100 + Math.sin(a) * 92;
+            const y2 = 100 - Math.cos(a) * 92;
+            return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" stroke-width={i % 4 === 0 ? 1 : 0.4} />;
+          })}
+        </g>
+        <polygon points="100,18 96,100 100,108 104,100" fill="currentColor" opacity="0.7" />
+        <polygon points="100,182 96,100 100,92 104,100" fill="currentColor" opacity="0.4" />
+      </g>
+    </svg>
   </section>
 
-  <hr class="ornament" />
+  <!-- Series spotlight: cross-fading covers per series -->
+  <section class="series-spotlight" id="series-spotlight" aria-label="The two series">
+    <div class="spotlight-inner reveal">
+      <h2 class="spotlight-heading">Two series. One careful audience.</h2>
+      <p class="spotlight-sub">
+        Each volume is a single long question, answered in the language it was asked.
+      </p>
+    </div>
 
-  {author.series.map((s) => (
-    <a class="series-card" href={s.url}>
-      <div class="label">{s.id === 'spiral-continuum' ? 'Series I' : 'Series II'}</div>
-      <h2>{s.title}</h2>
-      <div class="status">{s.volumes} volumes · {s.status_detail}</div>
-      <div class="tag">{s.tagline}</div>
-      <div class="cta">Read the series &rarr;</div>
-    </a>
-  ))}
+    <div class="spotlight-grid">
+      <article class="spotlight-card reveal" data-series="spiral">
+        <div class="spotlight-art" aria-hidden="true">
+          {spiralCovers.map((src, i) => (
+            <img src={src} alt="" style={`--i: ${i}; --total: ${spiralCovers.length};`} loading="lazy" />
+          ))}
+        </div>
+        <div class="spotlight-body">
+          <p class="spotlight-eyebrow">Series I</p>
+          <h3>{series.title}</h3>
+          <p class="spotlight-tag">{series.shared_tagline_pattern}</p>
+          <p class="spotlight-pitch">{series.elevator_pitch}</p>
+          <a class="spotlight-link" href="/spiral-continuum">
+            Read the eight volumes <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
 
-  <hr class="ornament" />
+      <article class="spotlight-card reveal" data-series="iob">
+        <div class="spotlight-art" aria-hidden="true">
+          {iobCovers.map((src, i) => (
+            <img src={src} alt="" style={`--i: ${i}; --total: ${iobCovers.length};`} loading="lazy" />
+          ))}
+        </div>
+        <div class="spotlight-body">
+          <p class="spotlight-eyebrow">Series II</p>
+          <h3>{iobSeries.title}</h3>
+          <p class="spotlight-tag">{iobSeries.tagline}</p>
+          <p class="spotlight-pitch">{iobSeries.elevator_pitch}</p>
+          <a class="spotlight-link" href="/island-of-bones">
+            Read the nine volumes <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
 
-  <p class="muted" style="text-align: center;">
-    <a href="/author">More about Steven Saint</a>
-    &nbsp;&middot;&nbsp;
-    <a href="/maps">Series maps</a>
-  </p>
+  <!-- Timeline teaser: horizontal landmark strip -->
+  <section class="timeline-teaser reveal" aria-label="Landmark events teaser">
+    <div class="teaser-head">
+      <h2>From 1700 BCE to 2029 — and forward</h2>
+      <p class="muted">
+        Eleven sigils. Twenty-three letters. A line that has been waiting to be read.
+      </p>
+    </div>
+    <div class="teaser-marquee" aria-hidden="true">
+      <div class="teaser-track">
+        {[...timelineTeaser, ...timelineTeaser].map((e, i) => (
+          <div class="teaser-pill" style={`--i: ${i};`}>
+            <time>{e.date}</time>
+            <span>{e.title}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <p class="teaser-cta">
+      <a class="hero-cta spiral compact" href="/timeline">Open the master timelines →</a>
+    </p>
+  </section>
 </Layout>
+
+<style is:global>
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide, .compass-spin, .dust-mote, .teaser-track,
+  .hero-title .word, .sigil, .hero-tagline, .hero-ctas, .hero-eyebrow,
+  .hero-scroll, .spotlight-art img, .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+</style>
+
+<script is:inline>
+  // IntersectionObserver scroll reveal — pure vanilla.
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>
