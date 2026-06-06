@@ -1,32 +1,48 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import timelineData from '../../content/site/timeline.json';
+import spiralTimeline from '../../content/site/timeline.json';
+import iobTimeline from '../../content/iob-site/timeline.json';
 
 export async function getStaticPaths() {
-  const deepDives = await getCollection('timeline');
-  return deepDives.map((entry) => ({
-    params: { slug: entry.data.slug },
-    props: { entry },
-  }));
+  const spiral = await getCollection('timeline');
+  const iob    = await getCollection('iobTimeline');
+  return [
+    ...spiral.map((entry) => ({
+      params: { slug: entry.data.slug },
+      props: { entry, series: 'spiral-continuum' as const },
+    })),
+    ...iob.map((entry) => ({
+      params: { slug: entry.data.slug },
+      props: { entry, series: 'island-of-bones' as const },
+    })),
+  ];
 }
 
-const { entry } = Astro.props;
+const { entry, series } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 
-const indexEntries = timelineData.entries.sort((a, b) => a.year - b.year);
+const seriesData = series === 'spiral-continuum' ? spiralTimeline : iobTimeline;
+const seriesTitle = series === 'spiral-continuum' ? 'The Spiral Continuum' : 'Island of Bones';
+const seriesHref  = series === 'spiral-continuum' ? '/timeline#spiral-continuum' : '/timeline#island-of-bones';
+const seriesBookHrefBase = series === 'spiral-continuum' ? '/spiral-continuum/books/' : '/island-of-bones/books/';
+
+const indexEntries = [...seriesData.entries].sort((a, b) => a.year - b.year);
 const indexPos = indexEntries.findIndex((e) => e.slug === data.slug);
 const beforeEntry = indexPos > 0 ? indexEntries[indexPos - 1] : null;
 const afterEntry  = indexPos < indexEntries.length - 1 ? indexEntries[indexPos + 1] : null;
 
-const era = timelineData.eras.find((e) => e.id === data.era);
-const eraStart = era ? era.range : '';
+const era = seriesData.eras.find((e) => e.id === data.era);
+const eraRange = era ? era.range : '';
 ---
 
 <Layout title={data.title} description={data.subtitle ?? data.title}>
   <article class="tl-dive">
     <header class="tl-dive-header">
+      <p class="tl-dive-series">
+        <a href={seriesHref}>{seriesTitle}</a> &middot; Timeline
+      </p>
       <div class="tl-dive-era">
         <span class="glyph">{data.era_glyph}</span>
         <span>{data.era_label}</span>
@@ -46,9 +62,7 @@ const eraStart = era ? era.range : '';
     {data.quote && (
       <blockquote class="tl-dive-quote">
         <p>{data.quote}</p>
-        {data.quote_translation && (
-          <footer><em>{data.quote_translation}</em></footer>
-        )}
+        {data.quote_translation && <footer><em>{data.quote_translation}</em></footer>}
       </blockquote>
     )}
 
@@ -95,7 +109,7 @@ const eraStart = era ? era.range : '';
             {data.books.map((b) => (
               <tr>
                 <td>Book {b.id}</td>
-                <td><a href={`/spiral-continuum/books/${b.id}`}>{b.title}</a></td>
+                <td><a href={`${seriesBookHrefBase}${b.id}`}>{b.title}</a></td>
                 <td>{b.role}</td>
               </tr>
             ))}
@@ -111,9 +125,9 @@ const eraStart = era ? era.range : '';
       <div class="tl-mini">
         <svg viewBox="0 0 1000 80" preserveAspectRatio="none" role="img" aria-label="Mini timeline chart">
           <line x1="20" y1="40" x2="980" y2="40" stroke="var(--gold-dim)" stroke-width="2" />
-          {timelineData.entries
+          {seriesData.entries
             .filter((e) => e.era === data.era)
-            .map((e, i, arr) => {
+            .map((e, _, arr) => {
               const xs = arr.map((a) => a.year);
               const min = Math.min(...xs);
               const max = Math.max(...xs);
@@ -121,25 +135,23 @@ const eraStart = era ? era.range : '';
               const x = 20 + ((e.year - min) / span) * 960;
               const isMe = e.slug === data.slug;
               return (
-                <g>
-                  <circle
-                    cx={x}
-                    cy={40}
-                    r={isMe ? 9 : 5}
-                    fill={isMe ? 'var(--gold-bright)' : 'var(--gold)'}
-                    stroke={isMe ? 'var(--cyan)' : 'none'}
-                    stroke-width="2"
-                  />
-                </g>
+                <circle
+                  cx={x}
+                  cy={40}
+                  r={isMe ? 9 : 5}
+                  fill={isMe ? 'var(--gold-bright)' : 'var(--gold)'}
+                  stroke={isMe ? 'var(--cyan)' : 'none'}
+                  stroke-width="2"
+                />
               );
             })}
-          <text x="20" y="72" font-size="12" fill="var(--color-text-dim)">{eraStart.split('–')[0] ?? eraStart}</text>
-          <text x="980" y="72" font-size="12" fill="var(--color-text-dim)" text-anchor="end">{eraStart.split('–')[1] ?? ''}</text>
+          <text x="20" y="72" font-size="12" fill="var(--color-text-dim)">{eraRange.split('–')[0] ?? eraRange}</text>
+          <text x="980" y="72" font-size="12" fill="var(--color-text-dim)" text-anchor="end">{eraRange.split('–')[1] ?? ''}</text>
         </svg>
       </div>
       <p class="muted">
         The bright marker is this entry. The other markers are the other
-        canonical events in the same era.
+        canonical events in the same era of <em>{seriesTitle}</em>.
       </p>
     </section>
 
@@ -161,13 +173,13 @@ const eraStart = era ? era.range : '';
 
     <nav class="tl-dive-nav">
       {beforeEntry && (
-        <a class="tl-prev" href={beforeEntry.slug ? `/timeline/${beforeEntry.slug}` : '/timeline'}>
+        <a class="tl-prev" href={beforeEntry.slug ? `/timeline/${beforeEntry.slug}` : seriesHref}>
           <span class="muted">Before</span><br />{beforeEntry.date} &mdash; {beforeEntry.title}
         </a>
       )}
-      <a class="tl-up" href="/timeline">&larr; Back to the full timeline</a>
+      <a class="tl-up" href={seriesHref}>&larr; Back to the {seriesTitle} timeline</a>
       {afterEntry && (
-        <a class="tl-next" href={afterEntry.slug ? `/timeline/${afterEntry.slug}` : '/timeline'}>
+        <a class="tl-next" href={afterEntry.slug ? `/timeline/${afterEntry.slug}` : seriesHref}>
           <span class="muted">After</span><br />{afterEntry.date} &mdash; {afterEntry.title}
         </a>
       )}

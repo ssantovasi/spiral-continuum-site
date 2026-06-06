@@ -127,6 +127,22 @@ function syncIoB() {
   if (copy(join(IOB_REPO, 'site', 'series.json'), join(IOB_SITE, 'series.json'))) {
     console.log(`  site metadata: series.json`);
   }
+  if (copy(join(IOB_REPO, 'site', 'timeline.json'), join(IOB_SITE, 'timeline.json'))) {
+    console.log(`  site metadata: timeline.json`);
+  }
+
+  const iobTimelineSrc = join(IOB_REPO, 'site', 'timeline');
+  const iobTimelineDst = join(CONTENT_DIR, 'iob-timeline');
+  ensureDir(iobTimelineDst);
+  let iobTl = 0;
+  if (existsSync(iobTimelineSrc)) {
+    for (const f of readdirSync(iobTimelineSrc)) {
+      if (f.endsWith('.md')) {
+        if (copy(join(iobTimelineSrc, f), join(iobTimelineDst, f))) iobTl++;
+      }
+    }
+  }
+  console.log(`  timeline deep-dives: ${iobTl} .md`);
 
   const patterns = [
     (n) => `book${n}_front.png`,

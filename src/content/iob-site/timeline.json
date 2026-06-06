@@ -1,0 +1,243 @@
+{
+  "title": "Island of Bones — Master Timeline",
+  "subtitle": "From the pale man's drift south, ~1000 AD, to the Codec's keyed resurfacing at planetary scale.",
+  "sources": [
+    "docs/05_timeline.md (master canon)",
+    "docs/01_series_arc.md · docs/02_book_arcs.md · docs/08_codec_mechanics.md",
+    "manuscript chapter sources (Book 1 drafted 2026-05-27, locked at 97,169 words / 31 chapters)"
+  ],
+  "eras": [
+    { "id": "deep-past",       "label": "Deep Past",              "range": "~1000 AD – pre-1493",   "glyph": "⌖" },
+    { "id": "contact",         "label": "Contact",                "range": "1492 – 1493",            "glyph": "✺" },
+    { "id": "empire",          "label": "Empire & Suppression",   "range": "1503 – 1530s",           "glyph": "⌬" },
+    { "id": "brethren",        "label": "The Brethren",           "range": "1600s – 1692",           "glyph": "⚔" },
+    { "id": "colonial",        "label": "Colonial Caribbean",     "range": "1733 – 1784",            "glyph": "⊜" },
+    { "id": "early-america",   "label": "Early America",          "range": "late 1700s – 1791",      "glyph": "⊕" },
+    { "id": "modern-prelude",  "label": "Modern Prelude",         "range": "1622 / 1979 – 1985",     "glyph": "⫯" },
+    { "id": "present",         "label": "Present Day",            "range": "Books 1–5",              "glyph": "✷" },
+    { "id": "future",          "label": "Future",                 "range": "Book 9",                 "glyph": "∞" }
+  ],
+  "entries": [
+    {
+      "date": "~1000 AD",
+      "year": 1000,
+      "era": "deep-past",
+      "title": "The pale man drifts south to the Antilles",
+      "slug": "pale-man-arrives-1000",
+      "summary": "Norse reach the Americas at L'Anse aux Meadows, Newfoundland — the only confirmed Norse site on the continent. A survivor, Thorfinn Karlsefnisson, drifts south to the Antilles and is taken in by the Taíno. He is alive 1,006 years later.",
+      "books": ["Bk.1", "Bk.6"],
+      "refs": ["docs/05_timeline.md DEEP PAST"]
+    },
+    {
+      "date": "~1000–1490s",
+      "year": 1100,
+      "era": "deep-past",
+      "title": "The behiques begin encoding the Codec",
+      "slug": null,
+      "summary": "The pale man warns the Taíno of a coming arrival and its approximate timing. The behiques — priest-shamans — begin encoding the warning into a scattered visual cipher across the islands. Generations of work, hidden in plain sight.",
+      "books": ["Bk.6"],
+      "refs": []
+    },
+    {
+      "date": "pre-1493",
+      "year": 1490,
+      "era": "deep-past",
+      "title": "Guarionex completes the warning window",
+      "slug": "warning-window-pre-1493",
+      "summary": "Guarionex carves the warning window and the wrong date — the keystone of the Codec. The last work done before the sails appear on the eastern horizon. Closing line: Now they'll never know we were here first.",
+      "quote": "Now they'll never know we were here first.",
+      "books": ["Bk.1", "Bk.6"],
+      "refs": ["Bk.1 cold open"]
+    },
+    {
+      "date": "1492",
+      "year": 1492,
+      "era": "contact",
+      "title": "Columbus's first voyage makes landfall",
+      "slug": null,
+      "summary": "In the Bahamas. The 'discovery' narrative begins — laid over an arrival that happened earlier and on purpose.",
+      "books": ["Bk.1"],
+      "refs": []
+    },
+    {
+      "date": "1493 November 14",
+      "year": 1493,
+      "era": "contact",
+      "title": "Salt River — Cabo de las Flechas",
+      "slug": "salt-river-1493",
+      "summary": "Columbus's second voyage. Men land at Salt River Bay, St. Croix — the only Columbus landing on present-day U.S. soil. Kalinago resist with arrows — first armed clash in the New World; named Cabo de las Flechas. The landing site was a guarded Codec sightline; the conquest was steered there by foreknowledge. Hayuya, son of Guarionex, releases the arrow at the count of the tall stranger's seventh pace.",
+      "books": ["Bk.1", "Bk.7"],
+      "refs": ["Bk.1 Ch.17 reframe; Bk.7 origins"]
+    },
+    {
+      "date": "1503",
+      "year": 1503,
+      "era": "empire",
+      "title": "Casa de Contratación founded",
+      "slug": "casa-de-contratacion-1503",
+      "summary": "At Seville. Controls New World navigation and the secret master chart, the Padrón Real. The seed of the Hunters. The Casa Verde Heritage Trust traces its institutional lineage back to this office.",
+      "books": ["Bk.7"],
+      "refs": ["docs/05_timeline.md EMPIRE & SUPPRESSION"]
+    },
+    {
+      "date": "1510s–1530s",
+      "year": 1520,
+      "era": "empire",
+      "title": "The Defector turns Guardian",
+      "slug": null,
+      "summary": "A Casa de Contratación pilot reads a Codec fragment, understands what he has been complicit in helping to bury, and turns Guardian. He is betrayed by a colleague who founds the Hunters. The making of the split.",
+      "books": ["Bk.7"],
+      "refs": []
+    },
+    {
+      "date": "1600s",
+      "year": 1650,
+      "era": "brethren",
+      "title": "A rogue Brethren faction learns to read Codec fragments",
+      "slug": null,
+      "summary": "The Brethren of the Coast operate from Tortuga and Port Royal. A rogue faction within learns to read Codec fragments — the privateer thread the origin trilogy will close.",
+      "books": ["Bk.8"],
+      "refs": []
+    },
+    {
+      "date": "~1690",
+      "year": 1690,
+      "era": "brethren",
+      "title": "The Privateer drowns a fragment for safekeeping",
+      "slug": null,
+      "summary": "A Brethren-of-the-Coast captain who has recovered a Codec fragment hides it in Port Royal. He intends to retrieve it. He never gets the chance.",
+      "books": ["Bk.8"],
+      "refs": []
+    },
+    {
+      "date": "1692 June 7",
+      "year": 1692,
+      "era": "brethren",
+      "title": "Port Royal sinks — the drowned clue",
+      "slug": "port-royal-sinks-1692",
+      "summary": "Earthquake sinks much of Port Royal into the sea. The Privateer's fragment goes down with it. The drowned clue. Book 2 will recover it as a parallel thread; Book 8 will tell the story of how it went down.",
+      "books": ["Bk.2", "Bk.8"],
+      "refs": ["docs/05_timeline.md THE BRETHREN"]
+    },
+    {
+      "date": "1733–1734",
+      "year": 1733,
+      "era": "colonial",
+      "title": "Akwamu uprising on St. John",
+      "slug": null,
+      "summary": "Enslaved Akwamu hold the island for ~6 months before defeat. A Guardian fragment passes through the revolt; the estate ruins keep a window-clue. Kwame Cudjoe — Iris's partner — traces his lineage to this uprising.",
+      "books": ["Bk.1"],
+      "refs": []
+    },
+    {
+      "date": "1750",
+      "year": 1750,
+      "era": "colonial",
+      "title": "Norman Island treasure legend",
+      "slug": null,
+      "summary": "Spanish galleon treasure legend associated with Norman Island and the Treasure Point caves — the Owen Lloyd hoard. The Guardians cultivate Norman Island as a decoy. The Casa Verde charge in Book 1 brings down the underwater chamber roof at Privateer Bay exactly as the Guardians designed it in the 14th century.",
+      "books": ["Bk.1"],
+      "refs": []
+    },
+    {
+      "date": "1771",
+      "year": 1771,
+      "era": "colonial",
+      "title": "Thomas Jefferys's Virgin Islands chart",
+      "slug": null,
+      "summary": "Thomas Jefferys, Geographer to the King, dies; his Virgin Islands chart circulates. Its 'errors' hide true bearings — first falsified reference. The framed copy hangs on Steven's wall.",
+      "books": ["Bk.1", "Bk.2"],
+      "refs": ["Bk.1 Ch.9 plant; Bk.2 full payoff"]
+    },
+    {
+      "date": "1784",
+      "year": 1784,
+      "era": "colonial",
+      "title": "Faden/de la Rochette's Antilles chart",
+      "slug": null,
+      "summary": "William Faden publishes de la Rochette's chart of the Antilles — the second falsified reference. The two charts disagree; the pattern of their disagreement gives the Mississippi River's hidden colonial-period bearings. Book 2's decoding piece.",
+      "books": ["Bk.1", "Bk.2"],
+      "refs": []
+    },
+    {
+      "date": "late 1700s",
+      "year": 1780,
+      "era": "early-america",
+      "title": "The Founder carries a fragment off-islands",
+      "slug": null,
+      "summary": "A Bridgetown ↔ Philadelphia Freemason carries a Codec fragment ashore and hides it inside the young republic. The bridge between the islands and the continent. The reason the modern hunt has to run inland in Book 2.",
+      "books": ["Bk.8"],
+      "refs": []
+    },
+    {
+      "date": "1791",
+      "year": 1791,
+      "era": "early-america",
+      "title": "Bois Caïman",
+      "slug": null,
+      "summary": "The ceremony helps spark the Haitian Revolution. Possible later-book Guardian node — the Maroon / revolution thread.",
+      "books": [],
+      "refs": []
+    },
+    {
+      "date": "1622 (sunk) / 1985 (found)",
+      "year": 1985,
+      "era": "modern-prelude",
+      "title": "The 1622 treasure fleet — the Atocha wreck",
+      "slug": null,
+      "summary": "The Atocha and Santa Margarita sink off the Florida Keys in September 1622. Mel Fisher finds the Atocha in 1985. The wreck field surrounds the Cayo Hueso vault; the 1985 find nearly exposes it.",
+      "books": ["Bk.3"],
+      "refs": []
+    },
+    {
+      "date": "1979 November 14",
+      "year": 1979,
+      "era": "modern-prelude",
+      "title": "The Madrid Trust founded",
+      "slug": null,
+      "summary": "Carmen Núñez Carrasco (31) and Pedro Mendez (57) found the Fundación Documental de la Casa Atlántica en el Marco Atlántico Ibérico ('Madrid Trust') at the Casa Atlántica, Calle de la Sal, Madrid. Carmen as founding director — the institutional moment Books 4–7 trace back to. Lucía Mendez at 14 in the adjacent room.",
+      "books": ["Bk.7"],
+      "refs": ["Bk.7 Ch.21b; clue B7-12"]
+    },
+    {
+      "date": "Book 4",
+      "year": 2025,
+      "era": "present",
+      "title": "The team converges",
+      "slug": null,
+      "summary": "Each principal as a separate thread — Iris Lettsome, Kwame Cudjoe, Rafael Ribero — before page one of Book 1. The convergence that the trilogy will never separate again.",
+      "books": ["Bk.4"],
+      "refs": []
+    },
+    {
+      "date": "Books 1–3",
+      "year": 2026,
+      "era": "present",
+      "title": "The hunt — and the vault at Cayo Hueso",
+      "slug": null,
+      "summary": "Iris reads a sugar-mill window wrong on St. John (Book 1). The chain runs the length of the Mississippi corridor (Book 2). The vault at Cayo Hueso opens (Book 3). Three secret layers — scale, substance, crime — land for the first time. The underground secures the discovery; they don't release it.",
+      "books": ["Bk.1", "Bk.2", "Bk.3"],
+      "refs": []
+    },
+    {
+      "date": "Book 5",
+      "year": 2027,
+      "era": "present",
+      "title": "Governments and the Church faction chase the discovery",
+      "slug": null,
+      "summary": "The discovery is half-public. The Natal, Brazil bearing planted at the end of Book 1 becomes operationally relevant. The southern chain answers questions the northern chain leaves open.",
+      "books": ["Bk.5"],
+      "refs": []
+    },
+    {
+      "date": "Book 9 (future)",
+      "year": 2120,
+      "era": "future",
+      "title": "The keyed condition is met — the Codec resurfaces",
+      "slug": null,
+      "summary": "The fragment of the Codec that the Guardians sealed at the end of Book 3 — the piece that was not for now — keys to a condition the behiques could not name when they cut it. The Codec opens its last door. The pale man closes the loop he opened in ~1000 AD.",
+      "books": ["Bk.9"],
+      "refs": []
+    }
+  ]
+}

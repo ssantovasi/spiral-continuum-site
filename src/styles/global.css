@@ -1080,3 +1080,47 @@ hr.ornament::after {
 .tl-dive-nav .tl-next { text-align: right; }
 .tl-dive-nav a:hover { color: var(--gold-bright); }
 .tl-dive-nav .muted { color: var(--color-text-dim); font-size: 0.8rem; font-variant: small-caps; letter-spacing: 0.06em; }
+
+/* ---------- Timeline: per-series sections ---------- */
+
+.tl-series {
+  scroll-margin-top: 4rem;
+}
+
+.tl-series-head {
+  margin-bottom: 1.5rem;
+}
+
+.tl-series-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+.tl-series-head h2 .glyph {
+  color: var(--gold);
+  font-size: 1.1em;
+}
+
+.tl-series .tl-era-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.tl-dive-series {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin: 0 0 0.65rem;
+}
+
+.tl-dive-series a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.tl-dive-series a:hover { color: var(--gold-bright); }
