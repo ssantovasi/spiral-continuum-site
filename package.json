@@ -10,9 +10,13 @@
     "dev": "node scripts/sync-content.mjs && astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "wrangler pages deploy dist --project-name=spiral-continuum-site --branch=main"
   },
   "dependencies": {
     "astro": "^6.4.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.98.0"
   }
 }
