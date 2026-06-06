@@ -8,7 +8,7 @@ tagline: The audience has been listening.
 pages: 408
 words: 143631
 voice_register: Trilogy — close-third, multi-POV
-isbn_paperback: null
+isbn_paperback: 979-8-18041-770-1
 isbn_hardcover: null
 asin: null
 art:
