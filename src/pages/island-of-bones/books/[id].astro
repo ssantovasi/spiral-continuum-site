@@ -59,6 +59,22 @@ const hasFront  = data.art.front !== null;
 
     <hr class="ornament" />
 
+    <section class="book-map">
+      <h2><span class="glyph">⌒</span> The map of {data.volume_label}</h2>
+      <div class="book-map-placeholder">
+        <p>The Island of Bones map suite is in production.</p>
+        <p class="muted">
+          {data.setting ? <>The volume's hero geography: <em>{data.setting}.</em></> : null}
+        </p>
+        <p class="muted">
+          When the IoB map artifacts ship, the per-book chart will land here.
+          {' '}<a href="/maps">See the maps page for status &rarr;</a>
+        </p>
+      </div>
+    </section>
+
+    <hr class="ornament" />
+
     <p class="muted">
       <a href="/island-of-bones">&larr; All nine volumes</a>
     </p>

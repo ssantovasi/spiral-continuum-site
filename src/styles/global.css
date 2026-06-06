@@ -1124,3 +1124,90 @@ hr.ornament::after {
 }
 
 .tl-dive-series a:hover { color: var(--gold-bright); }
+
+/* ---------- Per-book detail: map section ---------- */
+
+.book-map {
+  margin: 2.5rem 0;
+}
+
+.book-map h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+  color: var(--gold);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+.book-map h2 .glyph {
+  color: var(--gold);
+  font-size: 1.2em;
+}
+
+.book-map figure {
+  margin: 0;
+}
+
+.book-map figure a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 32px rgba(4, 8, 14, 0.7);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.book-map figure a:hover {
+  border-color: var(--gold);
+  box-shadow: 0 14px 40px rgba(218, 168, 56, 0.18);
+  transform: translateY(-2px);
+}
+
+.book-map figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.book-map figcaption {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-text-dim);
+  margin-top: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.book-map figcaption a {
+  color: var(--cyan);
+  font-style: normal;
+}
+
+.book-map figcaption a:hover { color: var(--gold-bright); }
+
+.book-map-placeholder {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--navy-mid),
+    var(--navy-mid) 12px,
+    var(--navy) 12px,
+    var(--navy) 24px
+  );
+  border: 1px dashed var(--color-border);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.book-map-placeholder p {
+  margin: 0.5rem auto;
+  max-width: 38rem;
+}
+
+.book-map-placeholder p:first-child {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gold);
+}

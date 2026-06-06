@@ -63,6 +63,28 @@ const buyLinks = [
 
     <hr class="ornament" />
 
+    <section class="book-map">
+      <h2><span class="glyph">⫢</span> The map of Book {data.id}</h2>
+      <figure>
+        <a href={`/img/series_map_book${data.id}_photo.png`} target="_blank" rel="noopener">
+          <img src={`/img/series_map_book${data.id}_photo.png`} alt={`Map artifact for ${data.title}`} loading="lazy" />
+        </a>
+        <figcaption>
+          The photoreal artifact rendering for <em>{data.title}</em>.
+          {' '}<a href="/maps">View the full gallery &rarr;</a> &middot;
+          {' '}Open the
+          {' '}<a href={`/img/series_map_book${data.id}_photo.png`} target="_blank" rel="noopener">high-resolution PNG</a>.
+        </figcaption>
+      </figure>
+      <p class="muted">
+        The free <a href="https://github.com/ssantovasi/spiral-continuum-supplement/releases/latest/download/maps_and_timeline_supplement.pdf">supplement PDF</a>
+        carries the canonical parchment-stylized version with every named
+        site, every dated path, every life-journey labeled.
+      </p>
+    </section>
+
+    <hr class="ornament" />
+
     <p class="muted">
       <a href="/spiral-continuum">&larr; All eight volumes</a>
     </p>
