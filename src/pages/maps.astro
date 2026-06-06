@@ -22,14 +22,19 @@ const mapCaptions: Record<number, string> = {
 <Layout title="Maps &amp; Timeline" description={supplement.description}>
   <h1>Maps &amp; Timeline</h1>
   <p class="tagline">
-    Nine parchment-stylized maps and a master timeline for
-    <em>The Spiral Continuum</em>. Color in-book versions are kept out of
-    the paperback for printing reasons; the full supplement is free to
-    download as a PDF, and the per-book maps are rendered in-page below.
+    Photo-realistic museum-artifact renderings of every map and the
+    master timeline. The artifacts you'd see on a Lapa desk, a Coimbra
+    refectory table, a captain's situation wall.
   </p>
 
   <p>
-    <a class="buy-link" href={supplement.download_url}>Download supplement PDF ({supplement.current_version})</a>
+    <a class="buy-link" href={supplement.download_url}>Download the supplement PDF ({supplement.current_version})</a>
+  </p>
+  <p class="muted">
+    The free supplement PDF carries the <em>canonical detail maps</em> —
+    the parchment-stylized cartographic versions with every named site,
+    every dated path, every life-journey labeled. The artifacts on this
+    page are mood-pieces; the PDF is the source.
   </p>
 
   <hr class="ornament" />
@@ -37,10 +42,10 @@ const mapCaptions: Record<number, string> = {
   <h2>The overall map</h2>
   <p class="muted">
     Every site, every path, every life-journey across the eight volumes —
-    rendered at wall-poster scale.
+    rendered as a captain's wall map pinned to dark oak.
   </p>
   <div class="maps-feature">
-    <img src="/img/series_map_overall.png" alt="Overall series map" loading="lazy" />
+    <img src="/img/series_map_overall_photo.png" alt="Overall series map artifact" loading="lazy" />
     <div class="caption">The overall map — 1700 BCE through 2029 CE.</div>
   </div>
 
@@ -48,24 +53,25 @@ const mapCaptions: Record<number, string> = {
 
   <h2>The series timeline</h2>
   <p class="muted">
-    Master chronological timeline.
+    Master chronological timeline, rendered as an aged refectory-table scroll.
   </p>
   <div class="maps-feature">
-    <img src="/img/series_timeline.png" alt="Series timeline" loading="lazy" />
-    <div class="caption">Master chronology — from the 1700 BCE asker's hill to the 2029 closing day.</div>
+    <img src="/img/series_timeline_photo.png" alt="Series timeline artifact" loading="lazy" />
+    <div class="caption">From the 1700 BCE asker's hill to the 2029 closing day.</div>
   </div>
 
   <hr class="ornament" />
 
   <h2>Per-book maps</h2>
   <p class="muted">
-    One map per volume, in reading order.
+    One artifact per volume, in reading order. Each is the map the
+    keepers of that volume might have laid open on their desk.
   </p>
 
   <div class="maps-grid">
     {books.map((book) => (
       <a class="map-card" href={`/spiral-continuum/books/${book.data.id}`}>
-        <img src={`/img/series_map_book${book.data.id}.png`} alt={`Map for ${book.data.title}`} loading="lazy" />
+        <img src={`/img/series_map_book${book.data.id}_photo.png`} alt={`Map artifact for ${book.data.title}`} loading="lazy" />
         <h3>Book {book.data.id} &mdash; {book.data.title}</h3>
         <p class="caption" set:html={mapCaptions[book.data.id]} />
       </a>

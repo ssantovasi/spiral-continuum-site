@@ -73,6 +73,7 @@ function syncSpiral() {
     (n) => `book${n}_front_flap.png`,
     (n) => `scene_book${n}.png`,
     (n) => `series_map_book${n}.png`,
+    (n) => `series_map_book${n}_photo.png`,
   ];
   let imgs = 0;
   for (let i = 1; i <= 8; i++) {
@@ -80,7 +81,12 @@ function syncSpiral() {
       if (copy(join(SPIRAL_REPO, 'images', p(i)), join(PUBLIC_IMG, p(i)))) imgs++;
     }
   }
-  for (const extra of ['series_map_overall.png', 'series_timeline.png']) {
+  for (const extra of [
+    'series_map_overall.png',
+    'series_map_overall_photo.png',
+    'series_timeline.png',
+    'series_timeline_photo.png',
+  ]) {
     if (copy(join(SPIRAL_REPO, 'images', extra), join(PUBLIC_IMG, extra))) imgs++;
   }
   console.log(`  images: ${imgs} copied`);
