@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import timelineData from '../content/site/timeline.json';
+import { getCollection } from 'astro:content';
+
+const deepDives = await getCollection('timeline');
+const deepDiveSlugs = new Set(deepDives.map((d) => d.data.slug));
+
+const entries = timelineData.entries.sort((a, b) => a.year - b.year);
+
+const groupedByEra: Record<string, typeof entries> = {};
+for (const era of timelineData.eras) {
+  groupedByEra[era.id] = entries.filter((e) => e.era === era.id);
+}
+---
+
+<Layout title="The Master Timeline" description={timelineData.subtitle}>
+  <header class="tl-header">
+    <h1>{timelineData.title}</h1>
+    <p class="tagline">{timelineData.subtitle}</p>
+  </header>
+
+  <nav class="tl-eras" aria-label="Jump to era">
+    {timelineData.eras.map((era) => (
+      <a href={`#era-${era.id}`} class="tl-era-link">
+        <span class="glyph">{era.glyph}</span>
+        <span class="label">{era.label}</span>
+        <span class="range">{era.range}</span>
+      </a>
+    ))}
+  </nav>
+
+  <hr class="ornament" />
+
+  {timelineData.eras.map((era) => (
+    <section class="tl-era" id={`era-${era.id}`}>
+      <header class="tl-era-header">
+        <span class="glyph">{era.glyph}</span>
+        <h2>{era.label}</h2>
+        <span class="range">{era.range}</span>
+      </header>
+
+      <ol class="tl-entries">
+        {groupedByEra[era.id].map((entry) => {
+          const hasDeepDive = entry.slug && deepDiveSlugs.has(entry.slug);
+          return (
+            <li class={`tl-entry${hasDeepDive ? ' has-deep-dive' : ''}`}>
+              <time class="tl-date">{entry.date}</time>
+              <div class="tl-body">
+                <h3 class="tl-title">{entry.title}</h3>
+                <p class="tl-summary">{entry.summary}</p>
+                {entry.quote && (
+                  <blockquote class="tl-quote">{entry.quote}</blockquote>
+                )}
+                <div class="tl-meta">
+                  {entry.books.length > 0 && (
+                    <span class="tl-books">{entry.books.join(' · ')}</span>
+                  )}
+                  {hasDeepDive && (
+                    <a class="tl-link" href={`/timeline/${entry.slug}`}>Read more &rarr;</a>
+                  )}
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  ))}
+
+  <hr class="ornament" />
+
+  <p class="muted">
+    Compiled from the master canon document
+    (<code>.analysis/series_timeline.md</code>, 698 lines) with the
+    eight published manuscripts as the authority on conflict. Selected
+    landmark events have dedicated deep-dive pages — follow the
+    <em>Read more</em> links above.
+  </p>
+</Layout>

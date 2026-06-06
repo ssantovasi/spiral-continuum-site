@@ -14,7 +14,7 @@
  * Synced output is committed in this repo so Cloudflare Pages CI can
  * build without access to the private repos.
  */
-import { existsSync, mkdirSync, copyFileSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, copyFileSync, readFileSync, readdirSync } from 'node:fs';
 import { resolve, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -28,6 +28,7 @@ const IOB_REPO    = join(SIBLING, 'IslandOfBones');
 const CONTENT_DIR     = join(ROOT, 'src', 'content');
 const SPIRAL_BOOKS    = join(CONTENT_DIR, 'books');
 const SPIRAL_SITE     = join(CONTENT_DIR, 'site');
+const SPIRAL_TIMELINE = join(CONTENT_DIR, 'timeline');
 const IOB_BOOKS       = join(CONTENT_DIR, 'iob-books');
 const IOB_SITE        = join(CONTENT_DIR, 'iob-site');
 const PUBLIC_IMG      = join(ROOT, 'public', 'img');
@@ -61,10 +62,22 @@ function syncSpiral() {
   console.log(`  books: ${books}/8 .md`);
 
   let site = 0;
-  for (const f of ['series.json', 'author.json', 'supplement.json']) {
+  for (const f of ['series.json', 'author.json', 'supplement.json', 'timeline.json']) {
     if (copy(join(SPIRAL_REPO, 'site', f), join(SPIRAL_SITE, f))) site++;
   }
-  console.log(`  site metadata: ${site}/3 .json`);
+  console.log(`  site metadata: ${site}/4 .json`);
+
+  ensureDir(SPIRAL_TIMELINE);
+  const tlSrc = join(SPIRAL_REPO, 'site', 'timeline');
+  let tl = 0;
+  if (existsSync(tlSrc)) {
+    for (const f of readdirSync(tlSrc)) {
+      if (f.endsWith('.md')) {
+        if (copy(join(tlSrc, f), join(SPIRAL_TIMELINE, f))) tl++;
+      }
+    }
+  }
+  console.log(`  timeline deep-dives: ${tl} .md`);
 
   const patterns = [
     (n) => `book${n}_v8_cover.png`,

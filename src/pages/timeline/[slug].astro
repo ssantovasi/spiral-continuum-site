@@ -1,0 +1,176 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import timelineData from '../../content/site/timeline.json';
+
+export async function getStaticPaths() {
+  const deepDives = await getCollection('timeline');
+  return deepDives.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const indexEntries = timelineData.entries.sort((a, b) => a.year - b.year);
+const indexPos = indexEntries.findIndex((e) => e.slug === data.slug);
+const beforeEntry = indexPos > 0 ? indexEntries[indexPos - 1] : null;
+const afterEntry  = indexPos < indexEntries.length - 1 ? indexEntries[indexPos + 1] : null;
+
+const era = timelineData.eras.find((e) => e.id === data.era);
+const eraStart = era ? era.range : '';
+---
+
+<Layout title={data.title} description={data.subtitle ?? data.title}>
+  <article class="tl-dive">
+    <header class="tl-dive-header">
+      <div class="tl-dive-era">
+        <span class="glyph">{data.era_glyph}</span>
+        <span>{data.era_label}</span>
+        <span class="dot">·</span>
+        <time>{data.date}</time>
+      </div>
+      <h1>{data.title}</h1>
+      {data.subtitle && <p class="subtitle">{data.subtitle}</p>}
+      <p class="location"><strong>Location.</strong> {data.location}</p>
+    </header>
+
+    <figure class="tl-dive-hero">
+      <img src={data.hero_image} alt={data.hero_caption ?? data.title} loading="lazy" />
+      {data.hero_caption && <figcaption>{data.hero_caption}</figcaption>}
+    </figure>
+
+    {data.quote && (
+      <blockquote class="tl-dive-quote">
+        <p>{data.quote}</p>
+        {data.quote_translation && (
+          <footer><em>{data.quote_translation}</em></footer>
+        )}
+      </blockquote>
+    )}
+
+    <section class="tl-dive-prose prose">
+      <Content />
+    </section>
+
+    <hr class="ornament" />
+
+    <section class="tl-dive-tables">
+      <div class="tl-dive-table">
+        <h2><span class="glyph">⊕</span> Characters present</h2>
+        <table>
+          <thead><tr><th>Name</th><th>Role</th><th>Age</th></tr></thead>
+          <tbody>
+            {data.characters.map((c) => (
+              <tr>
+                <td>{c.name}</td>
+                <td>{c.role ?? '—'}{c.note ? ` (${c.note})` : ''}</td>
+                <td>{c.age ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tl-dive-table">
+        <h2><span class="glyph">⫢</span> Objects present</h2>
+        <table>
+          <thead><tr><th>Item</th><th>Provenance &amp; note</th></tr></thead>
+          <tbody>
+            {data.objects.map((o) => (
+              <tr><td>{o.name}</td><td>{o.note ?? '—'}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tl-dive-table">
+        <h2><span class="glyph">☰</span> Books covering this event</h2>
+        <table>
+          <thead><tr><th>Volume</th><th>Title</th><th>Role</th></tr></thead>
+          <tbody>
+            {data.books.map((b) => (
+              <tr>
+                <td>Book {b.id}</td>
+                <td><a href={`/spiral-continuum/books/${b.id}`}>{b.title}</a></td>
+                <td>{b.role}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr class="ornament" />
+
+    <section class="tl-dive-chart">
+      <h2><span class="glyph">∿</span> Where this sits in the era</h2>
+      <div class="tl-mini">
+        <svg viewBox="0 0 1000 80" preserveAspectRatio="none" role="img" aria-label="Mini timeline chart">
+          <line x1="20" y1="40" x2="980" y2="40" stroke="var(--gold-dim)" stroke-width="2" />
+          {timelineData.entries
+            .filter((e) => e.era === data.era)
+            .map((e, i, arr) => {
+              const xs = arr.map((a) => a.year);
+              const min = Math.min(...xs);
+              const max = Math.max(...xs);
+              const span = Math.max(1, max - min);
+              const x = 20 + ((e.year - min) / span) * 960;
+              const isMe = e.slug === data.slug;
+              return (
+                <g>
+                  <circle
+                    cx={x}
+                    cy={40}
+                    r={isMe ? 9 : 5}
+                    fill={isMe ? 'var(--gold-bright)' : 'var(--gold)'}
+                    stroke={isMe ? 'var(--cyan)' : 'none'}
+                    stroke-width="2"
+                  />
+                </g>
+              );
+            })}
+          <text x="20" y="72" font-size="12" fill="var(--color-text-dim)">{eraStart.split('–')[0] ?? eraStart}</text>
+          <text x="980" y="72" font-size="12" fill="var(--color-text-dim)" text-anchor="end">{eraStart.split('–')[1] ?? ''}</text>
+        </svg>
+      </div>
+      <p class="muted">
+        The bright marker is this entry. The other markers are the other
+        canonical events in the same era.
+      </p>
+    </section>
+
+    {data.related && data.related.length > 0 && (
+      <>
+        <hr class="ornament" />
+        <section class="tl-dive-related">
+          <h2><span class="glyph">⫯</span> Related entries</h2>
+          <ul>
+            {data.related.map((r) => (
+              <li><a href={`/timeline/${r.slug}`}>{r.title}</a></li>
+            ))}
+          </ul>
+        </section>
+      </>
+    )}
+
+    <hr class="ornament" />
+
+    <nav class="tl-dive-nav">
+      {beforeEntry && (
+        <a class="tl-prev" href={beforeEntry.slug ? `/timeline/${beforeEntry.slug}` : '/timeline'}>
+          <span class="muted">Before</span><br />{beforeEntry.date} &mdash; {beforeEntry.title}
+        </a>
+      )}
+      <a class="tl-up" href="/timeline">&larr; Back to the full timeline</a>
+      {afterEntry && (
+        <a class="tl-next" href={afterEntry.slug ? `/timeline/${afterEntry.slug}` : '/timeline'}>
+          <span class="muted">After</span><br />{afterEntry.date} &mdash; {afterEntry.title}
+        </a>
+      )}
+    </nav>
+  </article>
+</Layout>

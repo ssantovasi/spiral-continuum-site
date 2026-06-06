@@ -19,25 +19,39 @@ const mapCaptions: Record<number, string> = {
 };
 ---
 
-<Layout title="Maps &amp; Timeline" description={supplement.description}>
-  <h1>Maps &amp; Timeline</h1>
+<Layout title="Maps" description="Photo-realistic map artifacts for both Steven Saint series.">
+  <h1>Maps</h1>
   <p class="tagline">
-    Photo-realistic museum-artifact renderings of every map and the
-    master timeline. The artifacts you'd see on a Lapa desk, a Coimbra
-    refectory table, a captain's situation wall.
+    Photo-realistic museum-artifact renderings — the maps you'd find on a
+    Lapa desk, a Coimbra refectory table, a captain's situation wall.
   </p>
 
-  <p>
-    <a class="buy-link" href={supplement.download_url}>Download the supplement PDF ({supplement.current_version})</a>
-  </p>
-  <p class="muted">
-    The free supplement PDF carries the <em>canonical detail maps</em> —
-    the parchment-stylized cartographic versions with every named site,
-    every dated path, every life-journey labeled. The artifacts on this
-    page are mood-pieces; the PDF is the source.
-  </p>
+  <nav class="series-tabs" aria-label="Choose a series">
+    <a href="#spiral-continuum" class="series-tab">
+      <span class="label">The Spiral Continuum</span>
+      <span class="status">8 maps · overall · timeline</span>
+    </a>
+    <a href="#island-of-bones" class="series-tab">
+      <span class="label">Island of Bones</span>
+      <span class="status">Supplement in progress</span>
+    </a>
+  </nav>
 
   <hr class="ornament" />
+
+  <section id="spiral-continuum" class="maps-section">
+    <header class="maps-section-head">
+      <h2><span class="glyph">☰</span> The Spiral Continuum</h2>
+      <p class="muted">
+        Nine parchment-stylized canonical maps with full place-name detail
+        ship inside the free <a href={supplement.download_url}>supplement
+        PDF ({supplement.current_version})</a>. The artifact renderings on
+        this page are mood-pieces; the PDF is the source.
+      </p>
+      <p>
+        <a class="buy-link" href={supplement.download_url}>Download supplement PDF</a>
+      </p>
+    </header>
 
   <h2>The overall map</h2>
   <p class="muted">
@@ -77,6 +91,32 @@ const mapCaptions: Record<number, string> = {
       </a>
     ))}
   </div>
+
+  </section>
+
+  <hr class="ornament" />
+
+  <section id="island-of-bones" class="maps-section">
+    <header class="maps-section-head">
+      <h2><span class="glyph">⌒</span> Island of Bones</h2>
+      <p class="muted">
+        The Island of Bones map suite is in production. The series's hero
+        geography spans the U.S. and British Virgin Islands, the Florida
+        Keys (Cayo Hueso), the Mississippi corridor, and the southern
+        terminus at Natal, Brazil. The Codec is hemisphere-spanning; the
+        maps will be too.
+      </p>
+      <p class="muted">
+        Until the IoB supplement ships, see the
+        {' '}<a href="/island-of-bones">series page</a> for setting
+        breakdowns per volume.
+      </p>
+    </header>
+
+    <div class="maps-placeholder">
+      <p>The IoB map suite will land alongside the first publishable Book 1 wrap.</p>
+    </div>
+  </section>
 
   <hr class="ornament" />
 

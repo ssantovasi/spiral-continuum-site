@@ -1,0 +1,568 @@
+{
+  "title": "The Spiral Continuum — Master Timeline",
+  "subtitle": "From the asker's hill at Almada, ~1700 BCE, to the Lapa kitchen-table closing day, 26 May 2029.",
+  "sources": [
+    ".analysis/series_timeline.md (master canon, 698 lines)",
+    "manuscript chapter sources book{1..8}_rewrite_ch{NN}.md",
+    "per-book plans plan_book{3..8}.md"
+  ],
+  "eras": [
+    { "id": "prehistory", "label": "Deep Prehistory", "range": "~1700 BCE", "glyph": "⊕" },
+    { "id": "mediaeval",  "label": "Late Mediaeval / Early Modern", "range": "1488 – 1565", "glyph": "⌒" },
+    { "id": "almeida",    "label": "Almeida's Life", "range": "1566 – 1653", "glyph": "☰" },
+    { "id": "corridor",   "label": "The Middle-Era Corridor", "range": "1653 – 1892", "glyph": "⫢" },
+    { "id": "aurora",     "label": "Aurora's Life", "range": "1892 – 1967", "glyph": "⫯" },
+    { "id": "mid20",      "label": "The Middle Twentieth Century", "range": "1967 – 2026", "glyph": "∿" },
+    { "id": "trilogy",    "label": "Trilogy Events", "range": "2026", "glyph": "✷" },
+    { "id": "closer",     "label": "The Last Carrier", "range": "2024 – 2029", "glyph": "⊓" }
+  ],
+  "entries": [
+    {
+      "date": "~1700 BCE",
+      "year": -1700,
+      "era": "prehistory",
+      "title": "Senhora Aurora asks the first question",
+      "slug": "first-question-at-almada",
+      "summary": "Senhora Aurora, filha-de, de Almada, primeira guardiã — the first woman of the line — asks the first question of a stone on what will become the Almada hill above the south bank of the Tagus. She is the line's audience-name; the Tupinambá calendar of the beginning of the rains aligns with the Southern Cross + Sigma Centauri B sky pattern she sees.",
+      "books": ["Bk.3"],
+      "refs": ["Bk.3 lines 2617, 8111–8181; cover-copy Bk.2"]
+    },
+    {
+      "date": "~1700 BCE onward",
+      "year": -1699,
+      "era": "prehistory",
+      "title": "The line is preserved as oral and material tradition",
+      "slug": null,
+      "summary": "Iberian, Tupinambá, Anatolian, Sicilian, Andean lineages — eleven generations to the historical period. Untraced.",
+      "books": ["Bk.3"],
+      "refs": []
+    },
+    {
+      "date": "1488",
+      "year": 1488,
+      "era": "mediaeval",
+      "title": "Cipriano de Avellar's grandfather receives the sigil paper",
+      "slug": "1488-sigil-paper",
+      "summary": "A small folded paper containing transcripts of two of the eleven sigils enters the Avellar Lisbon craft-line. King Turn One in 1568 will reveal the cipher was already in Lisbon eighty years before Almeida sailed.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.19"]
+    },
+    {
+      "date": "1538 late",
+      "year": 1538,
+      "era": "mediaeval",
+      "title": "João de Almeida born in Coimbra",
+      "slug": null,
+      "summary": "Older blood brother Raimundo de Almeida born ~1530 in Coimbra. Almeida will live 115 years; his memoir dictated from a Coimbra cell will close in January 1653.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.1"]
+    },
+    {
+      "date": "1540 Sept 27",
+      "year": 1540,
+      "era": "mediaeval",
+      "title": "Society of Jesus founded",
+      "slug": null,
+      "summary": "Regimini militantis Ecclesiae. Cipriano de Avellar's claim references this in Bk.4 line 1931.",
+      "books": ["Bk.4"],
+      "refs": []
+    },
+    {
+      "date": "1551",
+      "year": 1551,
+      "era": "mediaeval",
+      "title": "The small atlas receives its first Asian plates at Goa",
+      "slug": null,
+      "summary": "A small Portuguese-bound folio is bound by a Jesuit cartographer at Goa. The atlas Almeida will receive in 1652, Aurora will receive in 1934, and Elias will receive in 2026 begins here.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.23 plate-spine reference; Ch.39"]
+    },
+    {
+      "date": "1559",
+      "year": 1559,
+      "era": "mediaeval",
+      "title": "Bartolomeu de Sousa Vieira hears a voice that was not a voice",
+      "slug": null,
+      "summary": "In his sister's kitchen in Coimbra, on the night his sister dies. He never speaks of it until 1571 — when he names it to Almeida at the Tagus quay.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.31"]
+    },
+    {
+      "date": "1566 Sept",
+      "year": 1566,
+      "era": "almeida",
+      "title": "Almeida disembarks at Salvador da Bahia",
+      "slug": null,
+      "summary": "Aged 28, after eleven weeks at sea. Meets Brother Diogo Ximenes (22) in the refectory.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.1"]
+    },
+    {
+      "date": "1566 Oct/Nov",
+      "year": 1566,
+      "era": "almeida",
+      "title": "Anchieta gives Almeida the Tupi word cendub",
+      "slug": null,
+      "summary": "The kind of listening that changes the listener. The word the entire series will turn on.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.2"]
+    },
+    {
+      "date": "1567 Aug",
+      "year": 1567,
+      "era": "almeida",
+      "title": "Pirá-tatá appears at the Bahia gate",
+      "slug": null,
+      "summary": "Asking for the new priest who is learning the word.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.3"]
+    },
+    {
+      "date": "1567 Sept (early)",
+      "year": 1567,
+      "era": "almeida",
+      "title": "Departure up the Rio Negro",
+      "slug": null,
+      "summary": "Almeida, Pirá-tatá, Acuti, Cabos Joaquim Mendes and Sebastião Ferreira, ship's-boy. Mascarenhas's pursuit canoe at half a day.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.8"]
+    },
+    {
+      "date": "1567 Sept ~28",
+      "year": 1567,
+      "era": "almeida",
+      "title": "Plateau reached at Igarapé Sete",
+      "slug": null,
+      "summary": "Thirteen standing stones in an open clearing under sky. Almeida transcribes the eleven sigils on the central tallest stone.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Chs.9–11"]
+    },
+    {
+      "date": "1567 Sept 30",
+      "year": 1567,
+      "era": "almeida",
+      "title": "The Singing",
+      "slug": "the-singing-1567",
+      "summary": "Pirá-tatá raises his hands at the central stone; Acuti at the bone flute. Almeida is offered knowledge, refuses three times (Latin non, Portuguese não, Tupi aãni; the verb cendub). Pirá-tatá folds painlessly to the cool floor of the rainforest, dying without pain.",
+      "quote": "Audivi, intra caput meum, vocem quae vox non erat. Vox mihi cognitionem obtulit quam non petieram. Recusavi. Recusationes meas, ex illa hora, in singulis horis numero.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.13; cover-copy Bk.4"]
+    },
+    {
+      "date": "1567 Oct 1",
+      "year": 1567,
+      "era": "almeida",
+      "title": "Acuti carves Ainda aqui",
+      "slug": "ainda-aqui-1567",
+      "summary": "Acuti cuts the chip from the central stone (~8 kg, the size of a man's head, the hand of the greater) and carves Ainda aqui into a hardwood plank Pirá-tatá had prepared the day before. Soldiers Mendes & Ferreira flee in the third hour after the death; Ferreira killed at the river; Mendes escapes west.",
+      "books": ["Bk.4", "Bk.5"],
+      "refs": ["Bk.4 Chs.14–15; plan_book5 §8"]
+    },
+    {
+      "date": "1568 Feb 14",
+      "year": 1568,
+      "era": "almeida",
+      "title": "Almeida disembarks at the Tagus",
+      "slug": null,
+      "summary": "Reports to Padre Miguel de Torres (Rector, Casa Professa de São Roque). Latin report forwarded to Provincial Jorge Serrão. The Inquisitor's office becomes aware.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.18"]
+    },
+    {
+      "date": "1568 Feb (mid)",
+      "year": 1568,
+      "era": "almeida",
+      "title": "King Turn One: the cipher was already in Lisbon",
+      "slug": "king-turn-one-1568",
+      "summary": "Almeida at Cipriano de Avellar's workshop, Rua dos Fanqueiros. The bronze fork. Joana de Avellar (3) asleep in basket. Cipriano shows Almeida his grandfather's 1488 transcript of two of the eleven sigils. The cipher was already in Lisbon eighty years before Almeida sailed.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.19"]
+    },
+    {
+      "date": "1568 May–Jul",
+      "year": 1568,
+      "era": "almeida",
+      "title": "The Roman tribunal",
+      "slug": null,
+      "summary": "Six weeks of Holy Office tribunal hearings under Cardinal Giovanni Morone, Cardinal Marcantonio Maffei, Bishop Cipriano Pallavicino. Father Eugenio Pasqualino (SJ) defends. Verdict: procedural ambiguity; no charge of heresy, no full vindication.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.23"]
+    },
+    {
+      "date": "1568 Aug 15",
+      "year": 1568,
+      "era": "almeida",
+      "title": "Almeida finishes the parchment",
+      "slug": null,
+      "summary": "Signs in the upper room of the Lisbon Society house. Parchment + the 43-mark wooden disc + the original bronze fork are placed in an itaúba chest and delivered to Torres. The chest is the chest Maya & team find at São Vicente in April 2026.",
+      "books": ["Bk.2", "Bk.4"],
+      "refs": ["Bk.4 Ch.24"]
+    },
+    {
+      "date": "1571 Dec 22",
+      "year": 1571,
+      "era": "almeida",
+      "title": "King Turn Two: the Inquisitor at the Quay",
+      "slug": "king-turn-two-1571",
+      "summary": "Bartolomeu produces the page he removed in 1568, kept private. He tells Almeida he has heard the voice — Coimbra, 1559, his sister's kitchen. Page goes to his private archive; not to Rome.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.31"]
+    },
+    {
+      "date": "1611 (later in year)",
+      "year": 1611,
+      "era": "almeida",
+      "title": "Setúbal — the second disc to Mother Maria",
+      "slug": null,
+      "summary": "Almeida (73) travels for the only time in 40 years from Coimbra to the Convent of Jesus, Setúbal. He gives Mother Maria do Sacramento (19, postulant) the second of two wooden discs. Mother Maria copies the eleven sigils into her order's notebook that night.",
+      "books": ["Bk.3", "Bk.4"],
+      "refs": ["Bk.4 Ch.34; Bk.3 Ch.6"]
+    },
+    {
+      "date": "1640",
+      "year": 1640,
+      "era": "almeida",
+      "title": "Almeida begins the memoir",
+      "slug": null,
+      "summary": "Aged 102, from the Coimbra cell. Continues to 1653. The memoir is the document whose late hand Father João Almeida (modern) reads in 1998.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 translator's note"]
+    },
+    {
+      "date": "1645 May 11",
+      "year": 1645,
+      "era": "almeida",
+      "title": "Branca de Lima at the Door",
+      "slug": null,
+      "summary": "Branca (25, Cabeceiras de Basto Benedictine monastery's lay-servant house) walks 240 km to the Coimbra college after hearing a voice that was not a voice. Almeida (107) gives her Acuti's Ainda aqui plank, which he has carried in his cassock pocket for 78 years.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.36"]
+    },
+    {
+      "date": "1652 Nov",
+      "year": 1652,
+      "era": "almeida",
+      "title": "King Turn Three: Raimundo da Costa arrives with the atlas",
+      "slug": "king-turn-three-1652",
+      "summary": "Padre Raimundo da Costa (55) arrives Coimbra from Goa with the small atlas. On a Thursday evening he places the atlas on Almeida's desk. Almeida sees an oxblood anchor stamp crossed by his own monogram J.A. and the date 1567 on the front endpaper, in a hand not practised in Arabic numerals. The endpaper anachronism is LOCKED dangling.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.39"]
+    },
+    {
+      "date": "1653 Jan 28",
+      "year": 1653,
+      "era": "almeida",
+      "title": "Almeida dies",
+      "slug": "almeida-dies-1653",
+      "summary": "The porter, bringing his bread, finds Almeida (115; born late 1538) at the desk, journal open at a single Tupi word — cendub. Pedro de Avellar carries the eleven-mark disc, the companion disc, the atlas, and the journal out of the porter's lodge that morning under his coat.",
+      "books": ["Bk.4"],
+      "refs": ["Bk.4 Ch.40"]
+    },
+    {
+      "date": "1755 Nov 1",
+      "year": 1755,
+      "era": "corridor",
+      "title": "The Lisbon earthquake",
+      "slug": null,
+      "summary": "M~8.5–9, epicentre offshore SW. Inherited family memory in Bk.5: Aurora's grandmother Filomena's grandmother flees Lisbon with a small wooden box and a piece of red-cochineal cloth. The opening morning of Book 6.",
+      "books": ["Bk.5", "Bk.6"],
+      "refs": ["Bk.5 Ch.2; plan_book4 §9.1"]
+    },
+    {
+      "date": "1759 Jan 17",
+      "year": 1759,
+      "era": "corridor",
+      "title": "Inácio Soares leaves the Society",
+      "slug": null,
+      "summary": "Aurora's great-great-grandfather, a Coimbra Jesuit, leaves on the day of (or the day after) the Pombal expulsion edict. He is 19. He carries the atlas in his cassock pocket.",
+      "books": ["Bk.5", "Bk.6"],
+      "refs": ["Bk.5 Ch.4; Bk.6 Ch.10"]
+    },
+    {
+      "date": "1786",
+      "year": 1786,
+      "era": "corridor",
+      "title": "Inácio Soares recuts a mark on the silver disc",
+      "slug": null,
+      "summary": "A careful 0.4 mm recutting of one mark on the eight-mark silver disc to align it to the 1611 Setúbal copy's third sigil. The recutting is on record in his commonplace book.",
+      "books": ["Bk.6", "Bk.7"],
+      "refs": ["Bk.6 Ch.10; Bk.7 Ch.15"]
+    },
+    {
+      "date": "1848",
+      "year": 1848,
+      "era": "corridor",
+      "title": "The small whitewashed house is built",
+      "slug": null,
+      "summary": "At Cabeceiras de Basto, above the Mosteiro de São Miguel de Refojos. The house Aurora will be born in. The house Mariana will die in.",
+      "books": ["Bk.2", "Bk.5"],
+      "refs": ["Bk.2 line 159; Bk.5 Ch.2"]
+    },
+    {
+      "date": "1849 spring",
+      "year": 1849,
+      "era": "corridor",
+      "title": "Conceição cuts the path-marker",
+      "slug": "path-marker-1849",
+      "summary": "Bisavó Conceição (~29), the morning after a sentence arrived in her kitchen — the line continues here — walks out at dawn with a chisel and her father's mallet and cuts the path-marker at the third bend of the path: A linha continua aqui. Filomena (8) brings her bread at the third hour. The marker stands at eye-level for a person of average height in deep weather-cut letters.",
+      "quote": "A linha continua aqui.",
+      "books": ["Bk.5", "Bk.6"],
+      "refs": ["Bk.5 Ch.3; Bk.6 Ch.39"]
+    },
+    {
+      "date": "1887 Nov",
+      "year": 1887,
+      "era": "corridor",
+      "title": "A mulher de Porto",
+      "slug": null,
+      "summary": "Raimunda Coutinho-Faria (b. 1822, age 65), Aurora's father's first cousin's grandmother, arrives at the small whitewashed house in a man's coat after nine days walking. Sits with Margarida (22) and Filomena (46) for two evenings. Leaves a square of folded paper containing two Latin sentences. Instruction: Open in 1934. Not before.",
+      "books": ["Bk.2", "Bk.5"],
+      "refs": ["Bk.5 Ch.5"]
+    },
+    {
+      "date": "1892 Feb 9",
+      "year": 1892,
+      "era": "aurora",
+      "title": "Aurora Pacheco Coutinho born",
+      "slug": null,
+      "summary": "Born in the small whitewashed front bedroom of the house at Cabeceiras de Basto. Daughter of Margarida Pacheco Coutinho and Joaquim Coutinho. She will die in the same room 74 years later, having become the audience-name of a line older than her language.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Ch.1; plan_book5 §1"]
+    },
+    {
+      "date": "1925 Nov 14",
+      "year": 1925,
+      "era": "aurora",
+      "title": "Aurora marries Joaquim Lima",
+      "slug": null,
+      "summary": "Aged 33. At the village church. The marriage lasts nineteen years, until Joaquim Lima dies in PIDE custody.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Ch.8"]
+    },
+    {
+      "date": "1928 Oct 7",
+      "year": 1928,
+      "era": "aurora",
+      "title": "Mariana Pacheco Coutinho born",
+      "slug": null,
+      "summary": "Saturday morning. In the small whitewashed front bedroom — Aurora's only child, sole, beloved. She will live 98 years and hold Aurora's question for fifty-nine of them.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Ch.10"]
+    },
+    {
+      "date": "1934 Dec 1",
+      "year": 1934,
+      "era": "aurora",
+      "title": "The Mensagem hinge",
+      "slug": null,
+      "summary": "Aurora (42) reads Pessoa's Mensagem in three sittings at the kitchen table at Cabeceiras de Basto. By the third sitting she writes, in pencil in the margin of O Encoberto: Eu sou a audiência. That evening she opens the 1887 paper.",
+      "quote": "Eu sou a audiência.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Chs.13–14"]
+    },
+    {
+      "date": "1934 Dec 22",
+      "year": 1934,
+      "era": "aurora",
+      "title": "Padre Henrique brings the atlas",
+      "slug": "atlas-arrives-1934",
+      "summary": "Padre Henrique returns with a small leather case. Sets the small atlas — Raimundo da Costa's 1652 atlas — on the kitchen table. Padre Almeida bequeathed this. It has waited. Aurora opens the front endpaper and recognises her own hand on the 1567 monogram. She closes the atlas. I will keep this.",
+      "quote": "Padre Almeida bequeathed this. It has waited.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Ch.15"]
+    },
+    {
+      "date": "1944 Apr 14",
+      "year": 1944,
+      "era": "aurora",
+      "title": "Joaquim Lima dies in PIDE custody",
+      "slug": null,
+      "summary": "Aged 56. Aurora widowed at 52. He was beaten at Braga on the strength of an anonymous letter naming him for an overheard sentence about the Marinha Grande strike.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Ch.22"]
+    },
+    {
+      "date": "1948 May 18 – Jul 23",
+      "year": 1948,
+      "era": "aurora",
+      "title": "Aurora's voyage to Buriti",
+      "slug": null,
+      "summary": "Steamer Serpa Pinto Lisbon to Recife (22 days). Riverboat Recife → Manaus. Manaus → Buriti by canoe and on foot, 23 days, with Tupinambá guide Tiakuna. The plank wrapped in cotton in a small leather suitcase; seventeen letters of introduction sewn into the lining.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Chs.26–28"]
+    },
+    {
+      "date": "1948 Jul 24",
+      "year": 1948,
+      "era": "aurora",
+      "title": "Plank delivery at Buriti",
+      "slug": "plank-delivery-1948",
+      "summary": "Aurora gives the 1567 Ainda aqui plank to Benedita Nogueira (21) at Rosália Nogueira's (~50) kitchen door. Rosália speaks aloud the four Tupi words of Pirá-tatá's last sentence; Benedita transcribes phonetically.",
+      "books": ["Bk.1", "Bk.2", "Bk.5"],
+      "refs": ["Bk.5 Ch.29; Bk.1 line 1440"]
+    },
+    {
+      "date": "1962 Feb 18",
+      "year": 1962,
+      "era": "aurora",
+      "title": "The audience-name claimed in iron-gall",
+      "slug": null,
+      "summary": "Aurora rereads Mensagem. In the margin of O Encoberto, in iron-gall, beside her 1934 pencil-line, she writes: Eu sou a audiência. Tenho sido sempre a audiência. A audiência, no fim, identifica-se a si mesma.",
+      "quote": "A audiência, no fim, identifica-se a si mesma.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Ch.37"]
+    },
+    {
+      "date": "1965 Oct 14",
+      "year": 1965,
+      "era": "aurora",
+      "title": "Aurora begins dictating the manuscript",
+      "slug": null,
+      "summary": "Thursday afternoon. Aurora (73) begins dictating. Mariana (37) at the kitchen table opposite with steno pad. The dictation will run sixteen months, with pauses for illness and Christmas, and close on 31 January 1967.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 Ch.1"]
+    },
+    {
+      "date": "1967 Feb 3",
+      "year": 1967,
+      "era": "aurora",
+      "title": "Aurora dies",
+      "slug": "aurora-dies-1967",
+      "summary": "About six in the morning. In the front bedroom of the small whitewashed house, age 74. Mariana (39) at her side. Mariana hands a 3 February 1967 question-paper to be opened only when there is someone to read it to. The mantel has been empty for nineteen years.",
+      "books": ["Bk.2", "Bk.3", "Bk.5"],
+      "refs": ["Bk.5 Ch.40 coda"]
+    },
+    {
+      "date": "1998",
+      "year": 1998,
+      "era": "mid20",
+      "title": "Father João first reads Almeida's late papers",
+      "slug": null,
+      "summary": "Father João Almeida (modern) first reads his late namesake's papers in the Coimbra archive. The translator's-note conceit dates the manuscript's modern discovery to 1998.",
+      "books": ["Bk.3", "Bk.4"],
+      "refs": ["Bk.3 Ch.5; Bk.4 translator's note"]
+    },
+    {
+      "date": "2026 Sept (late)",
+      "year": 2026,
+      "era": "trilogy",
+      "title": "The atlas arrives at Elias Quinn's apartment",
+      "slug": "atlas-arrives-2026",
+      "summary": "Via solicitor's box. Tidemark on the Tagus page. Elias dismisses it as a clerical accident. By the second week he understands it as a fingerprint. By the third he has been pulled through a door no scholar of careful books volunteers to open.",
+      "books": ["Bk.1"],
+      "refs": ["Bk.1 Ch.1"]
+    },
+    {
+      "date": "2026 Apr 22",
+      "year": 2026,
+      "era": "trilogy",
+      "title": "The Andean chamber entered",
+      "slug": null,
+      "summary": "Bk.2 expedition team enters the Andean chamber at 4,720 m. Q'illu Mama's site. The fourth knot.",
+      "books": ["Bk.2"],
+      "refs": []
+    },
+    {
+      "date": "2026 May–Oct",
+      "year": 2026,
+      "era": "trilogy",
+      "title": "The atlas acquires seven Portuguese words",
+      "slug": null,
+      "summary": "Espera. Conta. Lembra. Junta. Olha. Caminha. Pergunta. Seven plates, seven words, at ~3-week intervals. The seventh lands inside the symbol of Cabeceiras de Basto monastery.",
+      "books": ["Bk.2"],
+      "refs": ["Bk.2 Chs.41–42"]
+    },
+    {
+      "date": "2026 Oct 1",
+      "year": 2026,
+      "era": "trilogy",
+      "title": "Mariana asks the question",
+      "slug": null,
+      "summary": "Inês boards the 7:42 train Porto to Braga; arrives Cabeceiras de Basto kitchen. Mariana asks her the question she has been carrying for fifty-nine years. Bk.3 begins.",
+      "books": ["Bk.3"],
+      "refs": ["Bk.3 Ch.1"]
+    },
+    {
+      "date": "2026 Dec 22",
+      "year": 2026,
+      "era": "trilogy",
+      "title": "The Seven Playings",
+      "slug": "seven-playings-2026",
+      "summary": "Southern solstice, 12:04 UTC. Seven sites in coordinated silence: Catania (Carla, bowl modulates 3 sec at 17.9 Hz); Trabzon (Selim, olive grove); Buriti (Tê + grandmother, cloth on table); Andean (Inês recites the question; Q'illu Mama replies in Quechua); Cabeceiras de Basto (Mariana hand on path-marker 22 minutes); São Vicente (Maya in alcove); Lapa (Cassandra at kitchen table with atlas).",
+      "books": ["Bk.3"],
+      "refs": ["Bk.3 Chs.29–35"]
+    },
+    {
+      "date": "2026 Dec 24/25",
+      "year": 2026,
+      "era": "trilogy",
+      "title": "Mariana does not wake on Christmas morning",
+      "slug": null,
+      "summary": "Aged 98. Her fifty-nine-year wait completed.",
+      "books": ["Bk.3"],
+      "refs": ["Bk.3 Chs.37–38"]
+    },
+    {
+      "date": "2026 Dec 28",
+      "year": 2026,
+      "era": "trilogy",
+      "title": "The Sentence Arrives",
+      "slug": "sentence-arrives-2026",
+      "summary": "Late afternoon. Twenty-three letters in eleven sigils, in an alphabet predating Phoenician, on the title page of the atlas: ⟁ ⫢ ☰ ⌒    ⊕ ∞ ⫢ ⫯ ⊕ ⊜    ⫯ ⊕ ∿    ⊕ ⊓ ✷ ⊕ ⊓    ⌒ ⊕ ⊓ ⫢ ⫯. Father João reads it provisionally as a name: Senhora Aurora, daughter-of, of Almada, first guardian. The reader does not need it translated.",
+      "quote": "Senhora Aurora, daughter-of, of Almada, first guardian.",
+      "books": ["Bk.3"],
+      "refs": ["Bk.3 Ch.39, Ch.42"]
+    },
+    {
+      "date": "2027 Mar 14",
+      "year": 2027,
+      "era": "mid20",
+      "title": "Cassandra finds Aurora's manuscript",
+      "slug": null,
+      "summary": "At the Lapa flat she inherited three months earlier, on the lower of two shelves above the writing-desk. Brown paper, white string. She unties the string. The Book 5 frame begins.",
+      "books": ["Bk.5"],
+      "refs": ["Bk.5 ch00 curator's note; ch41 coda"]
+    },
+    {
+      "date": "2028 Feb 28",
+      "year": 2028,
+      "era": "closer",
+      "title": "The Brienz Hinge",
+      "slug": null,
+      "summary": "Reinhardt cuts short his sabbatical on receiving Karl's flagged note about the Catarina move; this is the structural pivot that turns him back toward Geneva. He returns 1 April 2028, formally retired but holding a small consultancy retainer.",
+      "books": ["Bk.7"],
+      "refs": ["Bk.7 Chs.1, 22, 28"]
+    },
+    {
+      "date": "2028 Jun 11",
+      "year": 2028,
+      "era": "closer",
+      "title": "Selim registers the Reykjanes signature",
+      "slug": null,
+      "summary": "In the Trabzon olive-grove array. Sixth knot's identity confirmed by instrument as Reykjanes peninsula, southwest Iceland.",
+      "books": ["Bk.7"],
+      "refs": ["Bk.7 Ch.11"]
+    },
+    {
+      "date": "2029 Jan 9",
+      "year": 2029,
+      "era": "closer",
+      "title": "The Brienz boathouse",
+      "slug": null,
+      "summary": "Four in the afternoon. Cassandra travels to Reinhardt at Lake Brienz. He names what he picked Catarina for, names what she has gone past, and gives Cassandra the names of three foundation officers who will support a quiet removal. King-class hinge.",
+      "books": ["Bk.7"],
+      "refs": ["Bk.7 Ch.28"]
+    },
+    {
+      "date": "2029 May 26",
+      "year": 2029,
+      "era": "closer",
+      "title": "The Lapa kitchen-table closing day",
+      "slug": "closing-day-2029",
+      "summary": "Father João brings the eleven-mark Coimbra disc to the Lapa flat for the first time in the canon; the parchment, the 43-mark wooden disc, the original bronze fork, the eight-mark silver disc, the alpaca cloth, and the Ainda aqui plank are on the long oak table by the window. Seven line-instruments in one room for the only time in the canon. Inês arrives at four with her daughter Aurora; the child places her small specific hand on the atlas's cover for four seconds, then takes Cassandra's pen and holds it without writing.",
+      "quote": "The line continued. The books stopped. The pen was held.",
+      "books": ["Bk.7"],
+      "refs": ["Bk.7 Ch.40"]
+    }
+  ]
+}

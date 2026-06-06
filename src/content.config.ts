@@ -49,4 +49,42 @@ const iobBooks = defineCollection({
   }),
 });
 
-export const collections = { books, iobBooks };
+const timeline = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/timeline' }),
+  schema: z.object({
+    slug: z.string(),
+    date: z.string(),
+    year: z.number().int(),
+    era: z.string(),
+    era_label: z.string(),
+    era_glyph: z.string(),
+    title: z.string(),
+    subtitle: z.string().optional(),
+    location: z.string(),
+    hero_image: z.string(),
+    hero_caption: z.string().optional(),
+    quote: z.string().optional(),
+    quote_translation: z.string().optional(),
+    characters: z.array(z.object({
+      name: z.string(),
+      role: z.string().optional(),
+      age: z.string().optional(),
+      note: z.string().optional(),
+    })),
+    objects: z.array(z.object({
+      name: z.string(),
+      note: z.string().optional(),
+    })),
+    books: z.array(z.object({
+      id: z.number().int(),
+      title: z.string(),
+      role: z.string(),
+    })),
+    related: z.array(z.object({
+      slug: z.string(),
+      title: z.string(),
+    })).optional(),
+  }),
+});
+
+export const collections = { books, iobBooks, timeline };
