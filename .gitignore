@@ -26,3 +26,9 @@ Thumbs.db
 # Synced content is committed (Cloudflare deploys need it). To
 # regenerate, run `npm run sync` against a sibling CartographerCipher
 # clone.
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
