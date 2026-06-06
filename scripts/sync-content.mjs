@@ -149,6 +149,7 @@ function syncIoB() {
     (n) => `book${n}_v8_back.png`,
     (n) => `book${n}_spine.png`,
     (n) => `book${n}_front_flap.png`,
+    (n) => `series_map_book${n}_photo.png`,
   ];
   let imgs = 0;
   for (let i = 1; i <= 9; i++) {

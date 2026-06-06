@@ -6,6 +6,21 @@ import supplement from '../content/site/supplement.json';
 const books = (await getCollection('books')).sort(
   (a, b) => a.data.reading_order - b.data.reading_order
 );
+const iobBooks = (await getCollection('iobBooks')).sort(
+  (a, b) => a.data.reading_order - b.data.reading_order
+);
+
+const iobMapCaptions: Record<number, string> = {
+  1: 'USVI · BVI · Salt River · Cayo Hueso (Oct–Dec 2026).',
+  2: 'The Mississippi corridor from Vicksburg to the Gulf, with the drowned Port Royal detour.',
+  3: 'The Florida Keys + Cayo Hueso vault — the 1622-fleet graveyard.',
+  4: 'USVI ↔ Sevilla: the recruiting frame in the year before <em>The Island of Bones</em>.',
+  5: 'The Atlantic — Caribbean upper-left, Iberia upper-right, Natal at the southern terminus.',
+  6: '~1000 AD: the pale man drifts south from Newfoundland to the Antilles. (Working title.)',
+  7: '1492–1530s: Sevilla · the Casa de Contratación · Salt River · the Maya glyphs.',
+  8: '1600s–1700s: Caribbean basin to Philadelphia — Port Royal, Bridgetown, the Founder.',
+  9: 'Future: planetary-scale schematic, both Americas, ghosted orbital overlay.',
+};
 
 const mapCaptions: Record<number, string> = {
   1: 'Lisbon · the Atlantic · the upper Rio Negro. September–November 2026.',
@@ -100,21 +115,23 @@ const mapCaptions: Record<number, string> = {
     <header class="maps-section-head">
       <h2><span class="glyph">⌒</span> Island of Bones</h2>
       <p class="muted">
-        The Island of Bones map suite is in production. The series's hero
-        geography spans the U.S. and British Virgin Islands, the Florida
-        Keys (Cayo Hueso), the Mississippi corridor, and the southern
-        terminus at Natal, Brazil. The Codec is hemisphere-spanning; the
-        maps will be too.
-      </p>
-      <p class="muted">
-        Until the IoB supplement ships, see the
-        {' '}<a href="/island-of-bones">series page</a> for setting
-        breakdowns per volume.
+        Nine photoreal artifact maps for the Caribbean treasure-hunt
+        series — from the deep-past Vinland window through the modern
+        hunt at Cayo Hueso to the futuristic capstone of Book Nine. No
+        free supplement PDF yet; the artifact renders below are the
+        canonical surface for the maps until the print supplement
+        ships alongside Book 1.
       </p>
     </header>
 
-    <div class="maps-placeholder">
-      <p>The IoB map suite will land alongside the first publishable Book 1 wrap.</p>
+    <div class="maps-grid">
+      {iobBooks.map((book) => (
+        <a class="map-card" href={`/island-of-bones/books/${book.data.id}`}>
+          <img src={`/img/iob/series_map_book${book.data.id}_photo.png`} alt={`Map artifact for ${book.data.title}`} loading="lazy" />
+          <h3>{book.data.volume_label} &mdash; {book.data.title}</h3>
+          <p class="caption" set:html={iobMapCaptions[book.data.id]} />
+        </a>
+      ))}
     </div>
   </section>
 

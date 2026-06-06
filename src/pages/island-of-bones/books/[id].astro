@@ -61,16 +61,18 @@ const hasFront  = data.art.front !== null;
 
     <section class="book-map">
       <h2><span class="glyph">⌒</span> The map of {data.volume_label}</h2>
-      <div class="book-map-placeholder">
-        <p>The Island of Bones map suite is in production.</p>
-        <p class="muted">
-          {data.setting ? <>The volume's hero geography: <em>{data.setting}.</em></> : null}
-        </p>
-        <p class="muted">
-          When the IoB map artifacts ship, the per-book chart will land here.
-          {' '}<a href="/maps">See the maps page for status &rarr;</a>
-        </p>
-      </div>
+      <figure>
+        <a href={`/img/iob/series_map_book${data.id}_photo.png`} target="_blank" rel="noopener">
+          <img src={`/img/iob/series_map_book${data.id}_photo.png`} alt={`Map artifact for ${data.title}`} loading="lazy" />
+        </a>
+        <figcaption>
+          The photoreal artifact rendering for <em>{data.title}</em>.
+          {data.setting && <> Hero geography: <em>{data.setting}</em>.</>}
+          {' '}<a href="/maps#island-of-bones">View the IoB gallery &rarr;</a> &middot;
+          {' '}Open the
+          {' '}<a href={`/img/iob/series_map_book${data.id}_photo.png`} target="_blank" rel="noopener">high-resolution PNG</a>.
+        </figcaption>
+      </figure>
     </section>
 
     <hr class="ornament" />
