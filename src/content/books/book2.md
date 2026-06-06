@@ -10,7 +10,7 @@ words: 128780
 voice_register: Trilogy — close-third, multi-POV
 isbn_paperback: 979-8-19836-825-5
 isbn_hardcover: 979-8-19836-906-1
-asin: null
+asin: B0GX35TDBR
 art:
   front: images/book2_v8_cover.png
   back: images/book2_v8_back.png
