@@ -9,14 +9,19 @@
     "sync": "node scripts/sync-content.mjs",
     "dev": "node scripts/sync-content.mjs && astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "astro": "astro",
-    "deploy": "wrangler pages deploy dist --project-name=spiral-continuum-site --branch=main"
+    "deploy": "npm run build && wrangler deploy",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.6.1",
     "astro": "^6.4.4"
   },
   "devDependencies": {
     "wrangler": "^4.98.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
