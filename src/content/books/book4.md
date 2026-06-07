@@ -9,7 +9,7 @@ pages: 301
 words: 122086
 voice_register: Almeida memoir — late-Almeida + Jesuit period syntax + Holmes beats (1652 frame)
 isbn_paperback: 979-8-18046-522-1
-isbn_hardcover: null
+isbn_hardcover: 979-8-18046-596-2
 asin: null
 art:
   front: images/book4_v8_cover.png
