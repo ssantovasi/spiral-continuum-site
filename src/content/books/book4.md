@@ -8,7 +8,7 @@ tagline: Some things, when asked, wait.
 pages: 301
 words: 122086
 voice_register: Almeida memoir — late-Almeida + Jesuit period syntax + Holmes beats (1652 frame)
-isbn_paperback: null
+isbn_paperback: 979-8-18046-522-1
 isbn_hardcover: null
 asin: null
 art:
