@@ -39,6 +39,28 @@ Cloudflare Pages build settings:
 - **Build output directory**: `dist`
 - **Node version**: 22+
 
+## Mission Control
+
+`/mission-control/` is a **read-only** public snapshot of the two-series
+Mission Control dashboard (progress across *The Island of Bones* and *The
+Spiral Continuum*). It lives at `public/mission-control/` — a self-contained
+`index.html` plus a baked `data/` + cover thumbnails. All of the live
+dashboard's interactive controls (manual triggers, voice commands, output
+console, tracker editing, local quick-links) are intentionally omitted.
+
+The data is a point-in-time snapshot, so refresh it when the numbers change:
+
+```
+npm run refresh:mc                 # rebake snapshot -> build -> deploy live
+npm run refresh:mc -- --no-deploy  # rebake + build only (no deploy)
+npm run refresh:mc -- --commit     # also git add/commit/push the snapshot
+```
+
+Requires `python` on PATH and the private `IslandOfBones` repo cloned as a
+sibling directory (`../IslandOfBones`) — the script starts its local
+`mission_control` server, runs `build_static.py`, and copies the fresh
+`data/` + images into this repo. No `ELEVENLABS_API_KEY` is needed.
+
 ## Structure
 
 ```

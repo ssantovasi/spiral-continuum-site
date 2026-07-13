@@ -11,6 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "refresh:mc": "node scripts/refresh-mission-control.mjs",
     "deploy": "wrangler pages deploy dist --project-name=spiral-continuum-site --branch=main"
   },
   "dependencies": {
