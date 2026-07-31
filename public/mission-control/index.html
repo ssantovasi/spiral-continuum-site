@@ -51,6 +51,7 @@
   .ct small{color:var(--grey)}
   .dims{display:flex;flex-wrap:wrap;gap:.3rem .5rem;margin-bottom:.45rem}
   .d{display:inline-flex;align-items:center;gap:.32rem;font-size:.72rem;color:var(--dim)}
+  .dmeta{opacity:.72;font-variant-numeric:tabular-nums;white-space:nowrap}
   .d .lp{width:9px;height:9px}
   .d a{font-size:.7rem;margin-left:.1rem}
   .stats{display:flex;gap:.9rem;font-size:.74rem;color:var(--dim);border-top:1px solid rgba(150,190,170,.08);padding-top:.4rem}
@@ -119,8 +120,10 @@ function legend(){ document.getElementById('legend').innerHTML =
   .map(([s,t])=>`<span><span class="lp" style="background:${col(s)}"></span>${t}</span>`).join(''); }
 
 function dimChip(dim,bdim){
-  const st=(bdim&&bdim.state)||'todo', link=bdim&&bdim.link;
-  return `<span class="d" title="${dim.label}: ${lab(st)}"><span class="lp" style="background:${col(st)}"></span>${dim.label}`
+  const st=(bdim&&bdim.state)||'todo', link=bdim&&bdim.link, det=bdim&&bdim.detail;
+  const tip = `${dim.label}: ${lab(st)}` + (det?` — ${det}`:'');
+  return `<span class="d" title="${tip}"><span class="lp" style="background:${col(st)}"></span>${dim.label}`
+    + (det?` <span class="dmeta">${det}</span>`:'')
     + (link?` <a href="${link}" target="_blank" rel="noopener">↗</a>`:'') + `</span>`;
 }
 
